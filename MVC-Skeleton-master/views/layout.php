@@ -7,13 +7,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico|Pangolin" >
 <link rel="stylesheet" href="views/css/styles.css">
-<title>Shopping Cart</title>
+<title>Blog Post Stuff</title>
   </head>
   <body>
     <header class="w3-container w3-gray">
       <a href='/MVC_Skeleton'>Home</a>
-      <a href='?controller=product&action=readAll'>Products</a>
-      <a href='?controller=product&action=create'>Add Product</a>
+      <a href='?controller=blogpost&action=readAll'>Blog Post</a>
+      <a href='?controller=blogpost&action=create'>Add Blog Post</a>
     </header>
 <div class="w3-container w3-pink">
     <?php require_once('routes.php'); ?>

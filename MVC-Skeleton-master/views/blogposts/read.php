@@ -1,10 +1,10 @@
 <p>This is the requested product:</p>
 
-<p>Product ID: <?php echo $product->id; ?></p>
-<p>Product Name: <?php echo $product->name; ?></p>
-<p>Product Price: £<?php echo $product->price; ?></p>
+<p>Product ID: <?php echo $blogpost->id; ?></p>
+<p>Product Name: <?php echo $blogpost->name; ?></p>
+<p>Product Price: £<?php echo $blogpost->price; ?></p>
 <?php 
-$file = 'views/images/' . $product->name . '.jpeg';
+$file = 'views/images/' . $blogpost->name . '.jpeg';
 if(file_exists($file)){
     $img = "<img src='$file' width='150' />";
     echo $img;
