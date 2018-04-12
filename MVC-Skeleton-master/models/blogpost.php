@@ -37,18 +37,17 @@ foreach($req->fetchAll() as $blogpost) {
    return $list;
  }
 
-    public static function find() {
+    public static function find($BlogPostID) {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
       $req = $db->prepare('SELECT * FROM blogpost WHERE BlogPostID = :BlogPostID');
 
       //the query was prepared, now replace :id with the actual $id value
-      $req->execute;
-              (array('BlogPostID' => $BlogPostID));
+      $req->execute (array('BlogPostID' => $BlogPostID));
       $blogpost = $req->fetch();
 if($blogpost){
-      return new blogpost($blogpost['Title'], $blogpost['DatePublished'], $blogpost['Content']);
+      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content']);
     }
     else
     {
