@@ -17,14 +17,13 @@
       <a href='?controller=product&action=readAll'>Products</a>
       <a href='?controller=product&action=create'>Add Product</a>
     </header>
-<div class="w3-container w3-pink">
+    <div class="w3-container w3-pink">
     <?php require_once('routes.php'); ?>
-</<div>
+    </div>
 <div class="w3-container w3-gray">
     <footer >
         <p>Copyright &COPY; <?= date('Y'); ?>
-        Created for Get Into Tech for Sky <a href="http://www.sky.com">www.sky.com</a></p> 
-
+        Created for Get Into Tech for Sky <a href="http://www.sky.com">www.sky.com</a></p>        
     </footer>
 </div>
   </body>
