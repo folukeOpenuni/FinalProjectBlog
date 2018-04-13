@@ -12,8 +12,7 @@
   <body>
     <header class="w3-container w3-gray">
 <!--      <a href='/MVC_Skeleton'>Home</a>-->
-<!--      <a href="pages/home.php">Home</a>-->
-<a href="../MVC-Skeleton-master">Home</a>
+    <a href="../MVC-Skeleton-master">Home</a>
       
       <a href='?controller=product&action=readAll'>Products</a>
       <a href='?controller=product&action=create'>Add Product</a>
