@@ -22,7 +22,9 @@
 </<div>
 <div class="w3-container w3-gray">
     <footer >
-        Copyright &COPY; <?= date('Y'); ?>
+        <p>Copyright &COPY; <?= date('Y'); ?>
+        Created for Get Into Tech for Sky <a href="http://www.sky.com">www.sky.com</a></p> 
+
     </footer>
 </div>
   </body>
