@@ -54,7 +54,7 @@
 </nav>      
 
 
-<<<<<<< HEAD
+<!--<<<<<<< HEAD
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico|Pangolin" >
@@ -63,7 +63,7 @@
   </head>
   <body>
     <header class="w3-container w3-gray">
-<!--      <a href='/MVC_Skeleton'>Home</a>-->
+      <a href='/MVC_Skeleton'>Home</a>
     <a href="../MVC-Skeleton-master">Home</a>
       
       <a href='?controller=product&action=readAll'>Products</a>
@@ -78,7 +78,7 @@
         Created for Get Into Tech for Sky <a href="http://www.sky.com">www.sky.com</a></p>        
     </footer>
 </div>
-=======
+=======-->
     <?php require_once('routes.php'); ?>
 
 <!--FOOTER-->
@@ -117,9 +117,9 @@
     </div>
 </footer>
         Hello Copyright &COPY; <?= date('Y'); ?>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
->>>>>>> 71b0629e5bacc02ec126c9b64021f237387d909f
+>>>>>>> 71b0629e5bacc02ec126c9b64021f237387d909f-->
   </body>
 </html>
