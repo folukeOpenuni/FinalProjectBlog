@@ -1,9 +1,10 @@
-<p>This is the requested product:</p>
+<!--<p>This is the requested product:</p>-->
 
-<p>Product BlogPostID: <?php echo $blogpost->BlogPostID; ?></p>
-<p>Product Title: <?php echo $blogpost->Title; ?></p>
-<p>Product Date Published: <?php echo $blogpost->DatePublished; ?></p>
-<p>Product Content: <?php echo $blogpost->Content; ?></p>
+<!--<p>BlogPostID: <?php //echo $blogpost->BlogPostID; ?></p>-->
+<p>Title: <?php echo $blogpost->Title; ?></p>
+<p>WriterID: <?php echo $blogpost->WriterID; ?></p>
+<p>Date Published: <?php echo $blogpost->DatePublished; ?></p>
+<p>Content: <?php echo $blogpost->Content; ?></p>
 
 <?php 
 $file = 'views/images/' . $blogpost->Title . '.jpeg';

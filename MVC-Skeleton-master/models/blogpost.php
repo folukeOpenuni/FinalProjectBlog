@@ -2,24 +2,24 @@
   class blogpost {
 
     // we define 3 attributes
-      public $BlogPostID;
+    public $BlogPostID;
     public $Title;
-    public $WriterID;
     public $DatePublished;
-    public $Content;
+    public $Content; 
+    public $WriterID;
   //  public $country;
     //public $keyword;
     //public $continent;
   //  public $comment;
 
-    public function __construct($BlogPostID, $Title, $WriterID, $DatePublished, $Content){
+    public function __construct($BlogPostID, $Title,$DatePublished, $Content, $WriterID){
             //$country, $keyword, $continent, $comment) {
      
-      $this->BlogPostID = $BlogPostID;
-        $this->Title = $Title;
-    $this->WriterID = $WriterID;
+    $this->BlogPostID = $BlogPostID;
+    $this->Title = $Title;
     $this->DatePublished = $DatePublished;
-    $this->Content = $Content;
+    $this->Content = $Content; 
+    $this->WriterID = $WriterID;
     //$this->country = $country;
     //$this->keyword = $keyword;
    // $this->continent= $continent;
@@ -32,7 +32,7 @@ public static function all() {
 $req = $db->query('SELECT * FROM blogpost');
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['DatePublished'], $blogpost['Content'], $blogpost['WriterID']);
 }
    return $list;
  }
@@ -47,7 +47,7 @@ foreach($req->fetchAll() as $blogpost) {
       $req->execute (array('BlogPostID' => $BlogPostID));
       $blogpost = $req->fetch();
 if($blogpost){
-      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content']);
+      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['Content'], $blogpost['WriterID']);
     }
     else
     {
@@ -58,7 +58,7 @@ if($blogpost){
 
 public static function update($BlogPostID) {
     $db = Db::getInstance();
-    $req = $db->prepare("Update product set Title=:BlogPostID, :Title, DatePublished=:DatePublished where BlogPostID=:BlogPostID");
+    $req = $db->prepare("Update product set Title=:Title, DatePublished=:DatePublished, Content=:Content, WriterID=:WriterID where BlogPostID=:BlogPostID");
     $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);

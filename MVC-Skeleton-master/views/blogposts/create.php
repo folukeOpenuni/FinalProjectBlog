@@ -1,5 +1,5 @@
 <p>Fill in the following form to create a new post:</p>
-<form action="" method="POST" class="w3-container" enctype="multipart/form-data">
+<form action="blogpost_controller.php" method="POST" class="w3-container" enctype="multipart/form-data">
     
     <h2>Add Blog Post</h2>
 </div>
