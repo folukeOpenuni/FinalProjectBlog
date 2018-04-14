@@ -23,10 +23,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href='/MVC-Skeleton'>Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href='?controller=blogpost&action=readAll'>Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -53,6 +53,7 @@
   </div>
 </nav>      
 
+<<<<<<< HEAD
 
 <!--<<<<<<< HEAD
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
@@ -79,6 +80,8 @@
     </footer>
 </div>
 =======-->
+=======
+>>>>>>> cbb2f0e8f2692e36fef31c00962998108a70da80
     <?php require_once('routes.php'); ?>
 
 <!--FOOTER-->
