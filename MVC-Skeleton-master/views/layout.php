@@ -8,18 +8,15 @@
 <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- STYLES CSS-->
-    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-<!--W3SCHOOLS CSS-->
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link href="views/css/styles.css" rel="stylesheet" type="text/css"/>
 <!--GOOGLE FONT-->
-    <link href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps" rel="stylesheet">
-    <title>Gap Yah Blog</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps">
     </head>
     
     <body>
 <!-- NAV BAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <a class="navbar-brand" href="#"><img style="height: 30px; width: 30px;" src="../images/world-icon.jpg">  Gap Yah ltd.</a>
+    <a class="navbar-brand" href="#"><img style="height: 30px; width: 30px;" src="views/images/world-icon.jpg">  Gap Yah ltd.</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,15 +53,8 @@
   </div>
 </nav>      
 
-<!--    <header class="w3-container w3-gray">
-      <a href='/MVC_Skeleton'>Home</a>
-      <a href='?controller=product&action=readAll'>Products</a>
-      <a href='?controller=product&action=create'>Add Product</a>
-    </header>
-<div class="w3-container w3-pink">
+
     <?php require_once('routes.php'); ?>
-</<div>
-</div>-->
 
 <!--FOOTER-->
 <footer class="page-footer bg-f">
@@ -101,7 +91,7 @@
         </div>
     </div>
 </footer>
-        Copyright &COPY; <?= date('Y'); ?>
+        Hello Copyright &COPY; <?= date('Y'); ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
