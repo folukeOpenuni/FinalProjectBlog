@@ -58,7 +58,7 @@ if($blogpost){
 
 public static function update($BlogPostID) {
     $db = Db::getInstance();
-    $req = $db->prepare("Update product set Title=:Title, DatePublished=:DatePublished where BlogPostID=:BlogPostID");
+    $req = $db->prepare("Update product set Title=:BlogPostID, :Title, DatePublished=:DatePublished where BlogPostID=:BlogPostID");
     $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
@@ -66,6 +66,9 @@ public static function update($BlogPostID) {
     $req->bindParam(':WriterID', $WriterID);
     
 // set name and price parameters and execute
+    if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
+        $filteredBlogPostID = filter_input(INPUT_POST,'BlogPostID', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
     if(isset($_POST['Title'])&& $_POST['Title']!=""){
         $filteredTitle = filter_input(INPUT_POST,'Title', FILTER_SANITIZE_SPECIAL_CHARS);
     }
