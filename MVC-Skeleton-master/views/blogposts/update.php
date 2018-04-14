@@ -1,5 +1,5 @@
 <p>Fill in the following form to update an existing product:</p>
-<form action="blogpost_controller.php" method="POST" class="w3-container" enctype="multipart/form-data">
+<form action="" method="POST" class="w3-container" enctype="multipart/form-data">
     <h2>Update Item</h2>
     
     <p>

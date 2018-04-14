@@ -27,6 +27,11 @@
     }
 
 public static function all() {
+    //switch ($action){
+    //case 'delete':
+       // $action='readall'();
+        //break;
+    //}
   $list = [];
  $db = Db::getInstance();
 $req = $db->query('SELECT * FROM blogpost');
@@ -59,16 +64,16 @@ if($blogpost){
 public static function update($BlogPostID) {
     $db = Db::getInstance();
     $req = $db->prepare("Update product set Title=:Title, DatePublished=:DatePublished, Content=:Content, WriterID=:WriterID where BlogPostID=:BlogPostID");
-    $req->bindParam(':BlogPostID', $BlogPostID);
+    //$req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
  $req->bindParam(':Content', $Content);
     $req->bindParam(':WriterID', $WriterID);
     
 // set name and price parameters and execute
-    if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
-        $filteredBlogPostID = filter_input(INPUT_POST,'BlogPostID', FILTER_SANITIZE_SPECIAL_CHARS);
-    }
+    //if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
+       // $filteredBlogPostID = filter_input(INPUT_POST,'BlogPostID', FILTER_SANITIZE_SPECIAL_CHARS);
+   // }
     if(isset($_POST['Title'])&& $_POST['Title']!=""){
         $filteredTitle = filter_input(INPUT_POST,'Title', FILTER_SANITIZE_SPECIAL_CHARS);
     }
@@ -170,7 +175,7 @@ public static function remove($BlogPostID) {
       $db = Db::getInstance();
       //make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
-      $req = $db->prepare('delete FROM product WHERE BlogPostID = :BlogPostID');
+      $req = $db->prepare('delete FROM BlogPost WHERE BlogPostID = :BlogPostID');
       // the query was prepared, now replace :id with the actual $id value
       $req->execute(array('BlogPostID' => $BlogPostID));
   }
