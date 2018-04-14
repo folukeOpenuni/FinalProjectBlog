@@ -1,6 +1,6 @@
 <p>Here is a list of all blogposts:</p>
 
-<?php foreach($blogpost as $blogpost) { ?>
+<?php foreach($blogposts as $blogpost) { ?>
   <p>
     <?php echo $blogpost->Title; ?> &nbsp; &nbsp;
     <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'>See blogpost information</a> &nbsp; &nbsp;

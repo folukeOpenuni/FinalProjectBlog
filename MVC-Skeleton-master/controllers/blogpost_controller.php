@@ -3,7 +3,7 @@
 class blogpostController {
     public function readAll() {
       // we store all the posts in a variable
-      $blogpost = blogpost::all();
+      $blogposts = blogpost::all();
       require_once('views/blogposts/readAll.php');
     }
 
