@@ -62,7 +62,9 @@ public static function update($BlogPostID) {
     $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
-
+ $req->bindParam(':Content', $Content);
+    $req->bindParam(':WriterID', $WriterID);
+    
 // set name and price parameters and execute
     if(isset($_POST['Title'])&& $_POST['Title']!=""){
         $filteredTitle = filter_input(INPUT_POST,'Title', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -70,8 +72,17 @@ public static function update($BlogPostID) {
     if(isset($_POST['DatePublished'])&& $_POST['DatePublished']!=""){
         $filteredDatePublished = filter_input(INPUT_POST,'DatePublished', FILTER_SANITIZE_SPECIAL_CHARS);
     }
+    if(isset($_POST['Content'])&& $_POST['Content']!=""){
+        $filteredContent = filter_input(INPUT_POST,'Content', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    if(isset($_POST['WriterID'])&& $_POST['WriterID']!=""){
+        $filteredWriterID = filter_input(INPUT_POST,'WriterID', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+$BlogPostID = $filteredBlogPostID;
 $Title = $filteredTitle;
 $DatePublished = $filteredDatePublished;
+$Content = $filteredContent;
+$WriterID=$filteredWriterID;
 $req->execute();
 
 //upload product image if it exists
@@ -83,19 +94,34 @@ $req->execute();
     
     public static function add() {
     $db = Db::getInstance();
-    $req = $db->prepare("Insert into blogpost(Title, DatePublished) values (:Title, :DatePublished)");
+    $req = $db->prepare("Insert into blogpost(BlogPostID, Title, DatePublished, Content, WriterID) values (:BlogPostID, :Title, :DatePublished, :Content, :WriterID)");
+    $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
+     $req->bindParam(':Content', $Content);
+    $req->bindParam(':WriterID', $WriterID);
 
 // set parameters and execute
+    if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
+        $filteredBlogPostID = filter_input(INPUT_POST,'BlogPostID', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
     if(isset($_POST['Title'])&& $_POST['Title']!=""){
         $filteredTitle = filter_input(INPUT_POST,'Title', FILTER_SANITIZE_SPECIAL_CHARS);
     }
     if(isset($_POST['DatePublished'])&& $_POST['DatePublished']!=""){
         $filteredDatePublished = filter_input(INPUT_POST,'DatePublished', FILTER_SANITIZE_SPECIAL_CHARS);
     }
+    if(isset($_POST['Content'])&& $_POST['Content']!=""){
+        $filteredContent = filter_input(INPUT_POST,'Content', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    if(isset($_POST['WriterID'])&& $_POST['WriterID']!=""){
+        $filteredWriterID = filter_input(INPUT_POST,'WriterID', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+$BlogPostID = $filteredBlogPostID;
 $Title = $filteredTitle;
 $DatePublished = $filteredDatePublished;
+$Content = $filteredContent;
+$WriterID = $filteredWriterID;
 $req->execute();
 
 //upload product image
@@ -124,8 +150,9 @@ public static function uploadFile(string $Title) {
 	}
 
 	$tempFile = $_FILES[self::InputKey]['tmp_name'];
-        $path = "/Applications/XAMPP/xamppfiles/htdocs/FinalProjectBlog/MVC-Skeleton-master/views/images/";
-	$destinationFile = $path . $Title . '.jpeg';
+        $path = dirname(_DIR_)."/views/images/";
+	$destinationFile = $path . $_FILES[self::InputKey] ['Title'];
+               // '.jpeg';
 
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
 		trigger_error("Handle Error");

@@ -3,7 +3,7 @@
     <h2>Update Item</h2>
     
     <p>
-        <input class="w3-input" type="text" name="Tite" value="<?= $blogpost->Title; ?>">
+        <input class="w3-input" type="text" name="Title" value="<?= $blogpost->Title; ?>">
         <label>Title</label>
     </p>
     <p>
