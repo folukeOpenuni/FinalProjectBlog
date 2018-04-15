@@ -59,9 +59,6 @@
 .button:hover {
     background-color: #555;
 }
-.img{
-    height: 50px;
-}
 
 </style>
 <!--HEADER CAROUSEL-->
@@ -116,7 +113,7 @@
 
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/profilepicture/andreas.jpg" alt="Andreas" style="width:100%;height:200px">
+      <img src="views/images/profilepicture/andreas.jpeg" alt="Andreas" style="width:100%;height:200px">
       <div class="container">
         <h3>Andreas Orset</h3>
         <p class="title">Adventurer</p>
