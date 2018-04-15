@@ -10,7 +10,7 @@
     <div class='row'>
 <?php foreach($blogposts as $blogpost) { ?>
 <!--BLOG POST LISTINGS-->
-        <div class="col-md-4 container">
+        <div class="col-md-4 col-sm-10 col-10 container">
         <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'><img class="image" src="views/images/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive rounded" width="100%">
         <div class="middle">
         <div class="text"><?php echo $blogpost->Title;?></div>
