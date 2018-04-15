@@ -1,10 +1,8 @@
 
-<div class="card text-white">
-  <img class="card-img" src="views/images/"<?php echo $blogpost->Image; ?>>
-  <div class="card-img-overlay">
-    <h1 class="card-title text-centered"><?php echo $blogpost->Title; ?></h1>
+<div class="text-white text-overlay blog-img">
+  <img class="img-fulid blog-img" src="views/images/<?php echo $blogpost->Image; ?>">
+    <h1 class="text-centered"><?php echo $blogpost->Title; ?></h1>
     <p class="text-subhead">Date Published: <?php echo $blogpost->DatePublished; ?></p>
-  </div>
 </div>
 
 <p>This is the requested product:</p>
@@ -14,7 +12,7 @@
 
 <!--DO WE NEED THE BELOW? OR CAN WE MAKE A PHOTO MANDATORY WHEN UPLOADING A BLOG-->
 <?php 
-$file = 'views/images/' . $blogpost->Title . '.jpeg';
+$file = 'views/images/' . $blogpost->Image;
 if(file_exists($file)){
     $img = "<img src='$file' width='150' />";
     echo $img;

@@ -4,11 +4,14 @@ html, body, h1, h2, h3, h4, h5, h6 {
  font-family: 'Delius Swash Caps', cursive;
 }
 
-
 .container-fluid {
     padding-top: 60px;
     padding-bottom: 60px;
 } 
+
+.bottom-pad{
+    padding-bottom: 60px;
+}
 
 /*HEADER IMAGE TEXT OVERLAY*/
 .text-overlay {
@@ -25,9 +28,9 @@ html, body, h1, h2, h3, h4, h5, h6 {
 }
 
 .text-subhead {
-    font-size: 30px;
+    font-size: 4vw;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -74,4 +77,11 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 .bg-f {
     background-color: #80CED7;
+}
+
+/*BLOG HERO IMAGE*/
+
+.blog-img {
+    width: 100%;
+    height: auto;
 }
