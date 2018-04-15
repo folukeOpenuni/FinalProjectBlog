@@ -3,12 +3,7 @@
 html, body, h1, h2, h3, h4, h5, h6 {
  font-family: 'Delius Swash Caps', cursive;
 }
-/*.w3-tangerine {
-  font-family: 'Tangerine', serif;
-}
-.w3-pacifico {
-    font-family: 'Pacifico', cursive;
-}*/
+
 
 .container-fluid {
     padding-top: 60px;
@@ -22,9 +17,17 @@ html, body, h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 .text-centered {
-    font-size: 75px;
+    font-size: 6vw;
     position: absolute;
     top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-subhead {
+    font-size: 30px;
+    position: absolute;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -65,8 +68,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 .text {
   color: black;
-  font-size: 25px;
-  font-family: 'Delius Swash Caps', cursive;
+  font-size: 2.5vw;
   padding: 16px 32px;
 }
 
