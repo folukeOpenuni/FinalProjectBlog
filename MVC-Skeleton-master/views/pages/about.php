@@ -67,19 +67,19 @@
     <div class="carousel-item active text-overlay">
         <div class="text-overlay">
         <img class="d-block w-100" src="views/images/views.jpg" alt="guy looking over a bay">
-        <div class="text-centered">About Me!</div>
+        <div class="text-centered">About us!</div>
         </div>
     </div>
     <div class="carousel-item">
         <div class="text-overlay"> 
         <img class="d-block w-100" src="views/images/waterfall.jpg" alt="couple at waterfall">
-        <div class="text-centered">About Me!</div>
+        <div class="text-centered">About us!</div>
         </div>
    </div>
    <div class="carousel-item">
       <div class="text-overlay">  
       <img class="d-block w-100" src="views/images/travel.jpg" alt="friends travelling">
-      <div class="text-centered">About Me!</div>
+      <div class="text-centered">About us!</div>
       </div>
     </div>
   </div>
@@ -100,7 +100,7 @@
 <div class="row" >
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/profilepicture/john.jpg" alt="John" style="width:100%;height:200px">
+      <img src="views/images/profilepicture/john.jpg" alt="John" style="width:100%;height:auto">
       <div class="container">
         <h3>John Murray</h3>
         <p class="title">Writer</p>
@@ -113,7 +113,7 @@
 
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/profilepicture/andreas.jpeg" alt="Andreas" style="width:100%;height:200px">
+      <img src="views/images/profilepicture/andreas.jpeg" alt="Andreas" style="width:100%;height:auto">
       <div class="container">
         <h3>Andreas Orset</h3>
         <p class="title">Adventurer</p>
@@ -126,7 +126,7 @@
 
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/profilepicture/penny.jpg" alt="Penny" style="width:100%;height:200px">
+      <img src="views/images/profilepicture/penny.jpg" alt="Penny" style="width:100%;height:auto">
       <div class="container">
         <h3>Penny Yiota</h3>
         <p class="title">Meglomaniac</p>
@@ -138,7 +138,7 @@
   </div>
     <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/profilepicture/kiera.jpg" alt="Kiera" style="width:100%;height:200px">
+      <img src="views/images/profilepicture/kiera.jpg" alt="Kiera" style="width:100%;height:auto">
       <div class="container">
         <h3>Kiera Kenney</h3>
         <p class="title">Foodie</p>
