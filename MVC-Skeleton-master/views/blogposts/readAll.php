@@ -1,7 +1,7 @@
 <!--STATIC HEADER IMAGE-->
 <section>
         <div class="text-white text-overlay">
-            <img class="img-fluid" src="views/images/road.jpg" alt="road">
+            <img class="img-fluid" src="views/images/travel.jpg" alt="travel">
             <h1 class="text-centered">Blog posts</h1>
             <p class="text-subhead">Explore the world</p>
         </div>
