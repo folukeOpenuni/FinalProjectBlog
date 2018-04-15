@@ -1,19 +1,28 @@
 <!--STATIC HEADER IMAGE-->
 <section>
         <div class="text-white text-overlay">
-            <img class="img-fluid" src="views/images/travel.jpg" alt="travel">
+
+            <img class="img-fluid" src="views/images/road.jpg" alt="road">
             <h1 class="text-centered">Blog posts</h1>
             <p class="text-subhead">Explore the world</p>
         </div>
 </section>
 
-<p>Here is a list of all blogposts:</p>
 
-<?php foreach($blogposts as $blogpost) { ?>
-  <p>
+<section class='container-fluid'>
+    <div class='row'>
+<?php foreach($blogpost as $blogpost) { ?>
+<!--BLOG POST LISTINGS-->
+        <div class="col-md-4 container">
+        <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'><img class="image" src="views/images/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive rounded" width="100%">
+        <div class="middle">
+      
     <?php echo $blogpost->Title; ?> &nbsp; &nbsp;
     <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'>See blogpost information</a> &nbsp; &nbsp;
     <a href='?controller=blogpost&action=delete&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'>Delete blogpost</a> &nbsp; &nbsp;
     <a href='?controller=blogpost&action=update&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'>Update blogpost</a> &nbsp;
-  </p>
+    </p>
+        </div>
 <?php } ?>
+    </div>
+</section>

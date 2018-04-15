@@ -4,22 +4,28 @@
     // we define 3 attributes
     public $BlogPostID;
     public $Title;
-    public $DatePublished;
-    public $Content; 
     public $WriterID;
+    public $DatePublished;
+    public $Content;
+    public $Image;
+
   //  public $country;
     //public $keyword;
     //public $continent;
   //  public $comment;
 
-    public function __construct($BlogPostID, $Title,$DatePublished, $Content, $WriterID){
+
+    public function __construct($BlogPostID, $Title, $WriterID, $DatePublished, $Content, $Image){
+
             //$country, $keyword, $continent, $comment) {
      
     $this->BlogPostID = $BlogPostID;
     $this->Title = $Title;
-    $this->DatePublished = $DatePublished;
-    $this->Content = $Content; 
     $this->WriterID = $WriterID;
+    $this->DatePublished = $DatePublished;
+    $this->Content = $Content;
+    $this->Image = $Image;
+
     //$this->country = $country;
     //$this->keyword = $keyword;
    // $this->continent= $continent;
@@ -37,7 +43,8 @@ public static function all() {
 $req = $db->query('SELECT * FROM blogpost');
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['DatePublished'], $blogpost['Content'], $blogpost['WriterID']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image']);
+
 }
    return $list;
  }
@@ -52,7 +59,8 @@ foreach($req->fetchAll() as $blogpost) {
       $req->execute (array('BlogPostID' => $BlogPostID));
       $blogpost = $req->fetch();
 if($blogpost){
-      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['Content'], $blogpost['WriterID']);
+      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image']);
+
     }
     else
     {
@@ -67,7 +75,7 @@ public static function update($BlogPostID) {
     $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
- $req->bindParam(':Content', $Content);
+    $req->bindParam(':Content', $Content);
     $req->bindParam(':WriterID', $WriterID);
     
 // set name and price parameters and execute
@@ -106,7 +114,7 @@ $req->execute();
     $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
-     $req->bindParam(':Content', $Content);
+    $req->bindParam(':Content', $Content);
     $req->bindParam(':WriterID', $WriterID);
 
 // set parameters and execute
@@ -133,7 +141,7 @@ $WriterID = $filteredWriterID;
 $req->execute();
 
 //upload product image
-blogpost::uploadFile($Title);
+blogpost::uploadFile($Image);
     }
 
 const AllowedTypes = ['image/jpeg', 'image/jpg'];
