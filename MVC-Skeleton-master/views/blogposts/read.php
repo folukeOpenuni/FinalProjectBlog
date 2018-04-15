@@ -1,4 +1,5 @@
 
+
 <div class="text-white text-overlay blog-img">
   <img class="img-fulid blog-img" src="views/images/<?php echo $blogpost->Image; ?>">
     <h1 class="text-centered"><?php echo $blogpost->Title; ?></h1>
