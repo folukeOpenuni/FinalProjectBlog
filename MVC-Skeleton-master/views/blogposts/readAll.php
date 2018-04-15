@@ -8,7 +8,7 @@
 
 <section class='container-fluid'>
     <div class='row'>
-<?php foreach($blogpost as $blogpost) { ?>
+<?php foreach($blogposts as $blogpost) { ?>
 <!--BLOG POST LISTINGS-->
         <div class="col-md-4 container">
         <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'><img class="image" src="views/images/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive rounded" width="100%">
