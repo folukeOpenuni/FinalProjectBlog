@@ -4,10 +4,11 @@
     // we define 3 attributes
     public $BlogPostID;
     public $Title;
-    public $WriterID;
     public $DatePublished;
+    public $WriterID;
     public $Content;
-    public $Image;
+    
+    //public $Image;
 
   //  public $country;
     //public $keyword;
@@ -15,16 +16,16 @@
   //  public $comment;
 
 
-    public function __construct($BlogPostID, $Title, $WriterID, $DatePublished, $Content, $Image){
+    public function __construct($BlogPostID, $Title, $DatePublished,$WriterID, $Content){
 
             //$country, $keyword, $continent, $comment) {
      
     $this->BlogPostID = $BlogPostID;
     $this->Title = $Title;
-    $this->WriterID = $WriterID;
     $this->DatePublished = $DatePublished;
+    $this->WriterID = $WriterID;
     $this->Content = $Content;
-    $this->Image = $Image;
+    //$this->Image = $Image;
 
     //$this->country = $country;
     //$this->keyword = $keyword;
@@ -43,7 +44,7 @@ public static function all() {
 $req = $db->query('SELECT * FROM blogpost');
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content']);
 
 }
    return $list;
@@ -59,7 +60,7 @@ foreach($req->fetchAll() as $blogpost) {
       $req->execute (array('BlogPostID' => $BlogPostID));
       $blogpost = $req->fetch();
 if($blogpost){
-      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image']);
+      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content']);
 
     }
     else
@@ -71,12 +72,12 @@ if($blogpost){
 
 public static function update($BlogPostID) {
     $db = Db::getInstance();
-    $req = $db->prepare("Update blogpost set Title=:Title, DatePublished=:DatePublished, Content=:Content, WriterID=:WriterID where BlogPostID=:BlogPostID");
+    $req = $db->prepare("Update blogpost set Title=:Title, DatePublished=:DatePublished, WriterID=:WriterID, Content=:Content where BlogPostID=:BlogPostID");
     $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
-    $req->bindParam(':Content', $Content);
     $req->bindParam(':WriterID', $WriterID);
+    $req->bindParam(':Content', $Content);
     
 // set name and price parameters and execute
     //if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
@@ -88,17 +89,18 @@ public static function update($BlogPostID) {
     if(isset($_POST['DatePublished'])&& $_POST['DatePublished']!=""){
         $filteredDatePublished = filter_input(INPUT_POST,'DatePublished', FILTER_SANITIZE_SPECIAL_CHARS);
     }
-    if(isset($_POST['Content'])&& $_POST['Content']!=""){
-        $filteredContent = filter_input(INPUT_POST,'Content', FILTER_SANITIZE_SPECIAL_CHARS);
-    }
+    
     if(isset($_POST['WriterID'])&& $_POST['WriterID']!=""){
         $filteredWriterID = filter_input(INPUT_POST,'WriterID', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    if(isset($_POST['Content'])&& $_POST['Content']!=""){
+        $filteredContent = filter_input(INPUT_POST,'Content', FILTER_SANITIZE_SPECIAL_CHARS);
     }
 //$BlogPostID = $filteredBlogPostID;
 $Title = $filteredTitle;
 $DatePublished = $filteredDatePublished;
-$Content = $filteredContent;
 $WriterID=$filteredWriterID;
+$Content = $filteredContent;
 $req->execute();
 
 //upload product image if it exists
@@ -114,8 +116,8 @@ $req->execute();
     $req->bindParam(':BlogPostID', $BlogPostID);
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
-    $req->bindParam(':Content', $Content);
     $req->bindParam(':WriterID', $WriterID);
+    $req->bindParam(':Content', $Content);
 
 // set parameters and execute
     if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
@@ -127,13 +129,13 @@ $req->execute();
     if(isset($_POST['DatePublished'])&& $_POST['DatePublished']!=""){
         $filteredDatePublished = filter_input(INPUT_POST,'DatePublished', FILTER_SANITIZE_SPECIAL_CHARS);
     }
-    if(isset($_POST['Content'])&& $_POST['Content']!=""){
-        $filteredContent = filter_input(INPUT_POST,'Content', FILTER_SANITIZE_SPECIAL_CHARS);
-    }
+    
     if(isset($_POST['WriterID'])&& $_POST['WriterID']!=""){
         $filteredWriterID = filter_input(INPUT_POST,'WriterID', FILTER_SANITIZE_SPECIAL_CHARS);
     }
-$BlogPostID = $filteredBlogPostID;
+    if(isset($_POST['Content'])&& $_POST['Content']!=""){
+        $filteredContent = filter_input(INPUT_POST,'Content', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
 $Title = $filteredTitle;
 $DatePublished = $filteredDatePublished;
 $Content = $filteredContent;

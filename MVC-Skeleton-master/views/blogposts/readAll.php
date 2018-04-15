@@ -11,11 +11,12 @@
 
 <section class='container-fluid'>
     <div class='row'>
-<?php foreach($blogpost as $blogpost) { ?>
-<!--BLOG POST LISTINGS-->
+<?php foreach($blogposts as $blogpost) { ?>
+<!--BLOG POST LISTINGS
         <div class="col-md-4 container">
-        <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'><img class="image" src="views/images/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive rounded" width="100%">
-        <div class="middle">
+        <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'>
+            <img class="image" src="views/images/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive rounded" width="100%">
+        <div class="middle">-->
       
     <?php echo $blogpost->Title; ?> &nbsp; &nbsp;
     <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'>See blogpost information</a> &nbsp; &nbsp;
