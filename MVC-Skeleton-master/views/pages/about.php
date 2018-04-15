@@ -25,6 +25,7 @@
 /* Add some shadows to create a card effect */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
 }
 
 /* Some left and right padding inside the container */
@@ -57,6 +58,9 @@
 
 .button:hover {
     background-color: #555;
+}
+.img{
+    height: 50px;
 }
 
 </style>
@@ -99,12 +103,12 @@
 <div class="row" >
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/individual.jpeg" alt="John" style="width:100%">
+      <img src="views/images/profilepicture/john.jpg" alt="John" style="width:100%;height:200px">
       <div class="container">
         <h3>John Murray</h3>
         <p class="title">Writer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@gapyahblog.com</p>
+        <p>Placeholder: Link to bio in database</p>
+        <p><a href="mailto:john@gapyahblog.com">john@gapyahblog.com</a></p>
         <p><button class="button">See My Posts</button></p>
       </div>
     </div>
@@ -112,12 +116,12 @@
 
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/individual.jpeg" alt="Andreas" style="width:100%">
+      <img src="views/images/profilepicture/andreas.jpg" alt="Andreas" style="width:100%;height:200px">
       <div class="container">
         <h3>Andreas Orset</h3>
         <p class="title">Adventurer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>andreas@gapyahblog.com</p>
+        <p>Placeholder: link to bio in database</p>
+        <p><a href="mailto:andreas@gapyahblog.com">andreas@gapyahblog.com</a></p>
         <p><button class="button">See My Posts</button></p>
       </div>
     </div>
@@ -125,24 +129,24 @@
 
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/individual.jpeg" alt="Penny" style="width:100%">
+      <img src="views/images/profilepicture/penny.jpg" alt="Penny" style="width:100%;height:200px">
       <div class="container">
         <h3>Penny Yiota</h3>
         <p class="title">Meglomaniac</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>penny@gapyahblog.com</p>
+        <p>Placeholder: Link to bio in database</p>
+        <p><a href="mailto:penny@gapyahblog.com">penny@gapyahblog.com</a></p>
         <p><button class="button">See My Posts</button></p>
       </div>
     </div>
   </div>
     <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/individual.jpeg" alt="Kiera" style="width:100%">
+      <img src="views/images/profilepicture/kiera.jpg" alt="Kiera" style="width:100%;height:200px">
       <div class="container">
         <h3>Kiera Kenney</h3>
         <p class="title">Foodie</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>kiera@gapyahblog.com</p>
+       <p>Placeholder: link to bio in database</p>
+        <p><a href="mailto:kiera@gapyahblog.com">kiera@gapyahblog.com</a></p>
         <p><button class="button">See My Posts</button></p>
       </div>
     </div>
