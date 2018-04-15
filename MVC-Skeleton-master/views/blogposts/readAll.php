@@ -1,3 +1,12 @@
+<!--STATIC HEADER IMAGE-->
+<section>
+        <div class="text-white text-overlay">
+            <img class="img-fluid" src="views/images/travel.jpg" alt="travel">
+            <h1 class="text-centered">Blog posts</h1>
+            <p class="text-subhead">Explore the world</p>
+        </div>
+</section>
+
 <p>Here is a list of all blogposts:</p>
 
 <?php foreach($blogposts as $blogpost) { ?>
