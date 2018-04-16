@@ -119,9 +119,9 @@ $req->execute();
     $req->bindParam(':Content', $Content);
 
 // set parameters and execute
-    if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
+    //if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
         $filteredBlogPostID = filter_input(INPUT_POST,'BlogPostID', FILTER_SANITIZE_SPECIAL_CHARS);
-    }
+   // }
     if(isset($_POST['Title'])&& $_POST['Title']!=""){
         $filteredTitle = filter_input(INPUT_POST,'Title', FILTER_SANITIZE_SPECIAL_CHARS);
     }
@@ -139,7 +139,9 @@ $Title = $filteredTitle;
 $DatePublished = $filteredDatePublished;
 $Content = $filteredContent;
 $WriterID = $filteredWriterID;
-$req->execute();
+
+$stmt = $pdo->prepare("INSERT INTO blogpost (Title ,DatePublished,Content) VALUES(:FirstName,:LastName,:AddressLine1,:AddressLine2,:County,:Postcode,:EmailAddress,:DateOfBirth,:Password)");
+$pdo->execute();
 
 //upload product image
 blogpost::uploadFile($Image);
