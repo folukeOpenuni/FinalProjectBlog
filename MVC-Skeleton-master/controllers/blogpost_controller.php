@@ -111,9 +111,11 @@ class blogpostController {
       }
       
       public function find() {
-          $name = $_GET['name'];
-      // we use the given id to get the correct post
-      $blogposts = blogpost::find($name);
+          //$name = $_GET['name'];
+          
+ 
+        $blogposts = blogpost::find($_GET['name']);
+
       require_once('views/pages/SearchResults.php');
       }
  

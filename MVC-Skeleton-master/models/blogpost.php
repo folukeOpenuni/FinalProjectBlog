@@ -63,17 +63,14 @@ From blogpost
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID where Title like '%".$name."%' OR Country like '%".$name."%'OR Continent like '%".$name."%'");
-      $blogpost = $req->fetch();
-if($blogpost){
-      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['Image'], $blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'],$blogpost['Country'], $blogpost['Content']);
+     foreach($req->fetchAll() as $blogpost) {
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['Image'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Country'], $blogpost['Continent']);
 
-    }
-    else
-    {
-        //replace with a more meaningful exception
-        throw new Exception('A real exception should go here');
-    }
-    }
+}
+   return $list;
+ }
+    
+   
 
 public static function update($BlogPostID) {
     $db = Db::getInstance();
