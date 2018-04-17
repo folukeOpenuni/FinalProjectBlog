@@ -7,8 +7,7 @@
     public $DatePublished;
     public $WriterID;
     public $Content;
-    
-    //public $Image;
+    public $Image;
 
   //  public $country;
     //public $keyword;
@@ -60,7 +59,7 @@ foreach($req->fetchAll() as $blogpost) {
       $req->execute (array('BlogPostID' => $BlogPostID));
       $blogpost = $req->fetch();
 if($blogpost){
-      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content']);
+      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image']);
 
     }
     else
