@@ -110,10 +110,17 @@ class blogpostController {
       require_once('views/blogposts/southamerica.php');
       }
       
+      public function find() {
+          $name = $_GET['name'];
+      // we use the given id to get the correct post
+      $blogposts = blogpost::find($name);
+      require_once('views/pages/SearchResults.php');
+      }
  
  }
       
       
-    
+      
+
   
 ?>

@@ -49,17 +49,23 @@ foreach($req->fetchAll() as $blogpost) {
    return $list;
  }
 
-    public static function find($BlogPostID) {
+    public static function find($name) {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
-      $BlogPostID = intval($BlogPostID);
-      $req = $db->prepare('SELECT * FROM blogpost WHERE BlogPostID = :BlogPostID');
-
-      //the query was prepared, now replace :id with the actual $id value
-      $req->execute (array('BlogPostID' => $BlogPostID));
+      if(isset($_POST['name'])){
+       
+        if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
+            $name=$_POST['name'];
+        }
+        }
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title, blogpost.Image, blogpost.DatePublished, blogpost.WriterID, blogpost.Content, country.Country, continent.Continent
+From blogpost
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID where Title like '%".$name."%' OR Country like '%".$name."%'OR Continent like '%".$name."%'");
       $blogpost = $req->fetch();
 if($blogpost){
-      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image']);
+      return new blogpost($blogpost['BlogPostID'], $blogpost['Title'], $blogpost['Image'], $blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'],$blogpost['Country'], $blogpost['Content']);
 
     }
     else
