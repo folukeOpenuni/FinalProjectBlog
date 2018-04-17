@@ -31,16 +31,17 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
     <H3>Comments</H3>
 <!-- COMMENT FORM (to post values to the comment.php page to be used in methods?-->
     <div id='respond'>
-    <H4>Leave a comment</H4>
+    <p>Leave a comment below</p>
     <form method="post" action="controllers/comment_controller.php" id="commentform" required="required">
         <input type="hidden" name="UserCommentID" value=""/>
         <input type="textarea" name="CommentContent" id='CommentContent'/>
         <input type="hidden" name="ReaderID" value="5"/>
         <input type="hidden" name="BlogPostID" value="/index.php?controller=blogpost&action=read&BlogPostID=<?php $_GET['BlogPostID']?>"/>
         <input type="hidden" name="CommentTimestamp" value=""/>
-        <input name="submit "type ="Submit" value="submitcomment"/>    
+        <input name="submit "type ="Submit"/>    
     </form>    
     </div>
+<!--BELOW IS ACHIEVING NOTHING-->
     <a href='?controller=comment&action=comment&UserCommentID=<?php echo $comment->UserCommentID; ?>'>Comment</a> &nbsp;
     <a href='?controller=comment&action=delete&UserCommentID=<?php echo $comment->UserCommentID; ?>'>Delete</a> &nbsp;
     <a href='?controller=comment&action=edit&UserCommentID=<?php echo $comment->UserCommentID; ?>'>Edit</a> &nbsp;
