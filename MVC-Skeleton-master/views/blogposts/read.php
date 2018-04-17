@@ -25,3 +25,29 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
 
 ?>
 	
+<!--COMMENT SECTION->
+--><section class='container-fluid'>
+    <H3>Comments</H3>
+    <a href='?controller=comment&action=comment&UserCommentID=<?php echo $comment->UserCommentID; ?>'>Comment</a> &nbsp;
+    <a href='?controller=comment&action=delete&UserCommentID=<?php echo $comment->UserCommentID; ?>'>Delete</a> &nbsp;
+    <a href='?controller=comment&action=edit&UserCommentID=<?php echo $comment->UserCommentID; ?>'>Edit</a> &nbsp;
+<!--INITIAL COMMENT-->
+    <div class="media bg-2">
+        <img class="mr-3" src="views/images/profilepicture/individual.jpeg" width=50px height=50px>
+            <div class="media-body">
+            <h5 class="mt-0"><?php echo $comment->ReaderID;?></h5>
+            <p><?php echo $comment->CommentContent;?></p>
+            
+<!--REPLY COMMENT IS NESTED-->
+    <div class="media mt-3 bg-2">
+        <a class="pr-3" href="#">
+        <img src="views/images/profilepicture/individual.jpeg" width=50px height=50px>
+        </a>
+            <div class="media-body">
+            <h5 class="mt-0">TonyConstantopolis_98</h5>
+            <p>You should go to the mountains in the Spring, its so inspiring.</p>
+            </div>
+    </div>
+            </div> <!--THIS ACHIEVES NESTING-->
+    </div>
+</section>
