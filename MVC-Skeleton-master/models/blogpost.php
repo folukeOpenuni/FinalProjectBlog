@@ -64,13 +64,13 @@ foreach($req->fetchAll() as $blogpost) {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
-      $req = $db->query('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, personaldata.FirstName, personaldata.LastName, blogpost.Content, blogpost.Image,country.Country, continent.Continent
+      $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, personaldata.FirstName, personaldata.LastName, blogpost.Content, blogpost.Image,country.Country, continent.Continent
 From blogpost
 Inner join writer on writer.WriterID= blogpost.WriterID
 Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
-Inner Join continent on country.ContinentID = continent.ContinentID WHERE BlogPostID = :BlogPostID');
+Inner Join continent on country.ContinentID = continent.ContinentID WHERE blogpost.BlogPostID = :BlogPostID');
 
       //the query was prepared, now replace :id with the actual $id value
       $req->execute (array('BlogPostID' => $BlogPostID));
