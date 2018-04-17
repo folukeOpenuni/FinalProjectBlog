@@ -74,7 +74,7 @@
         <div class="col-md-4">
             <h5>Join our online community</h5>
             <br>
-            <button type="button" class="btn btn-lg btn-light" href="#">Sign up</button>
+            <button type="button" class="btn btn-lg btn-light" href='?controller=user&action=create'>Sign up</button>
         </div>
 <!--THIRD FOOTER COL-->
         <div class="col-md-4 text-center">
