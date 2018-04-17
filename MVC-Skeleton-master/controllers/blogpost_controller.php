@@ -71,6 +71,45 @@ class blogpostController {
       $blogposts = blogpost::africa();
       require_once('views/blogposts/africa.php');
       }
+      
+       public function asia() {
+          
+      // we use the given id to get the correct post
+      $blogposts = blogpost::asia();
+      require_once('views/blogposts/asia.php');
+      }
+      
+      public function antartica() {
+          
+      // we use the given id to get the correct post
+      $blogposts = blogpost::antartica();
+      require_once('views/blogposts/antartica.php');
+      }
+      public function australia() {
+          
+      // we use the given id to get the correct post
+      $blogposts = blogpost::australia();
+      require_once('views/blogposts/australia.php');
+      }
+      public function europe() {
+          
+      // we use the given id to get the correct post
+      $blogposts = blogpost::europe();
+      require_once('views/blogposts/europe.php');
+      }
+      public function northamerica() {
+          
+      // we use the given id to get the correct post
+      $blogposts = blogpost::northamerica();
+      require_once('views/blogposts/northamerica.php');
+      }
+      public function southamerica() {
+          
+      // we use the given id to get the correct post
+      $blogposts = blogpost::southamerica();
+      require_once('views/blogposts/southamerica.php');
+      }
+      
  
  }
       

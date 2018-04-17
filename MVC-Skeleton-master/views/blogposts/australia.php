@@ -2,9 +2,9 @@
 <section>
         <div class="text-white text-overlay">
 
-            <img class="img-fluid" src="views/images/continent/asia.jpg"  alt="asia">
-            <h1 class="text-centered">Asia</h1>
-            <p class="text-subhead">It was the heat of the moment
+            <img class="img-fluid" src="views/images/continent/australia.jpg"  alt="australia">
+            <h1 class="text-centered">Australia</h1>
+            <p class="text-subhead">Do you come from a land down under?
 </p>
         </div>
 </section>
