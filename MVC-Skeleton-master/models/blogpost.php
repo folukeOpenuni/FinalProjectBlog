@@ -189,6 +189,26 @@ public static function remove($BlogPostID) {
       // the query was prepared, now replace :id with the actual $id value
       $req->execute(array('BlogPostID' => $BlogPostID));
   }
-  
+  public static function africa() {
+    //switch ($action){
+    //case 'delete':
+       // $action='readall'();
+        //break;
+    //}
+  $list = [];
+ $db = Db::getInstance();
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title, blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, country.Country, continent.Continent
+From blogpost
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID
+Where Continent = 'Africa'");
+// we create a list of Product objects from the database results
+foreach($req->fetchAll() as $blogpost) {
+ $list[] = new blogpost($blogpost['BlogPostID'], $blogpost['Title'],$blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image'], $blogpost['Country'], $blogpost['Continent']);
+
+}
+   return $list;
+ }
 }
 ?>

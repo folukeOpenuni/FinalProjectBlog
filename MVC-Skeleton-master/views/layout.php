@@ -40,7 +40,7 @@
           Continents
             </a>
             <div class="dropdown-menu" aria-labelledby="continentDropdown">
-                <a class="dropdown-item" href="#">Africa</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=africa">Africa</a>
                 <a class="dropdown-item" href="#">Antarctica</a>
                 <a class="dropdown-item" href="#">Asia</a>
                 <a class="dropdown-item" href="#">Australia</a>

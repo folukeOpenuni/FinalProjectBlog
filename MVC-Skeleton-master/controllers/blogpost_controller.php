@@ -65,6 +65,16 @@ class blogpostController {
             require_once('views/blogposts/readAll.php');
       }
       
-    }
+      public function africa() {
+          
+      // we use the given id to get the correct post
+      $blogposts = blogpost::africa();
+      require_once('views/blogposts/africa.php');
+      }
+ 
+ }
+      
+      
+    
   
 ?>
