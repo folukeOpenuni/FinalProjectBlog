@@ -17,5 +17,9 @@ class PagesController {
     public function error() {
       require_once('views/pages/error.php');
     }
+      
+    public function logIn() {
+    require_once('views/pages/logIn.php');
+    }
     
 }
