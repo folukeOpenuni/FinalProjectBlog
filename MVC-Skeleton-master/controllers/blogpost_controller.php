@@ -79,11 +79,11 @@ class blogpostController {
       require_once('views/blogposts/asia.php');
       }
       
-      public function antartica() {
+      public function antarctica() {
           
       // we use the given id to get the correct post
-      $blogposts = blogpost::antartica();
-      require_once('views/blogposts/antartica.php');
+      $blogposts = blogpost::antarctica();
+      require_once('views/blogposts/antarctica.php');
       }
       public function australia() {
           

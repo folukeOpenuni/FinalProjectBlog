@@ -2,8 +2,10 @@
 <section>
         <div class="text-white text-overlay">
 
-            <img class="img-fluid" src="views/images/continent/antartica.jpg"  alt="antartica">
+            <img class="img-fluid" src="views/images/continent/antarctica.jpg"  alt="antarctica">
             <h1 class="text-centered">Antarctica</h1>
+            <br>
+            <br><br>
             <p class="text-subhead">I'll stop the world and melt with you 
 </p>
         </div>

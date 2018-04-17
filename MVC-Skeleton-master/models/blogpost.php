@@ -232,7 +232,7 @@ foreach($req->fetchAll() as $blogpost) {
 }
    return $list;
  }
- public static function antartica() {
+ public static function antarctica() {
   $list = [];
  $db = Db::getInstance();
 $req = $db->query("Select blogpost.BlogPostID, blogpost.Title, blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, country.Country, continent.Continent
@@ -240,7 +240,7 @@ From blogpost
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'Antartica'");
+Where Continent = 'Antarctica'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'], $blogpost['Title'],$blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image'], $blogpost['Country'], $blogpost['Continent']);
