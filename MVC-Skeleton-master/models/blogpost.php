@@ -5,26 +5,30 @@
     public $BlogPostID;
     public $Title;
     public $DatePublished;
-    public $WriterID;
+    public $WriterFName;
+    public $WriterLName;
     public $Content;
     public $Image;
-
-  //  public $country;
-    //public $keyword;
-    //public $continent;
-  //  public $comment;
+    public $Keyword;
+    public $Country;
+    public $Continent;
 
 
-    public function __construct($BlogPostID, $Title, $DatePublished,$WriterID, $Content, $Image){
+
+    public function __construct($BlogPostID, $Title, $DatePublished,$WriterFName, $WriterLName, $Content, $Image, $Keyword, $Country, $Continent){
 
             //$country, $keyword, $continent, $comment) {
      
     $this->BlogPostID = $BlogPostID;
     $this->Title = $Title;
     $this->DatePublished = $DatePublished;
-    $this->WriterID = $WriterID;
+    $this->WriterFName = $WriterFName;
+    $this->WriterLName = $WriterLName;
     $this->Content = $Content;
     $this->Image = $Image;
+    $this->Keyword = $Keyword;
+    $this->Country = $Country;
+    $this->Continent = $Continent;
 
     //$this->country = $country;
     //$this->keyword = $keyword;
@@ -40,10 +44,18 @@ public static function all() {
     //}
   $list = [];
  $db = Db::getInstance();
-$req = $db->query('SELECT * FROM blogpost');
+$req = $db->query('Select blogpost.BlogPostID, blogpost.Title, blogpost.Image, blogpost.DatePublished, personaldata.FirstName, personaldata.LastName, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent
+From blogpost
+Inner join writer on writer.WriterID= blogpost.WriterID
+Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID
+Inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
+Inner join keyword on keyword.KeywordID = blogpostkeyword.KeywordID');
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Image']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['Image'],$blogpost['DatePublished'], $blogpost['FirstName'],$blogpost['LastName'],$blogpost['Content'], $blogpost['Image'],$blogpost['Country'],$blogpost['Continent']);
 
 }
    return $list;
