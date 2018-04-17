@@ -114,7 +114,7 @@ class blogpostController {
           //$name = $_GET['name'];
           
  
-        $blogposts = blogpost::find($_GET['name']);
+        $blogposts = blogpost::find();
 
       require_once('views/pages/SearchResults.php');
       }

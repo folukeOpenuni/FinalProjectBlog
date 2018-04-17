@@ -49,7 +49,7 @@ foreach($req->fetchAll() as $blogpost) {
    return $list;
  }
 
-    public static function find($name) {
+    public static function find() {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
       if(isset($_POST['name'])){
@@ -57,7 +57,7 @@ foreach($req->fetchAll() as $blogpost) {
         if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
             $name=$_POST['name'];
         }
-        }
+      }
       $req = $db->query("Select blogpost.BlogPostID, blogpost.Title, blogpost.Image, blogpost.DatePublished, blogpost.WriterID, blogpost.Content, country.Country, continent.Continent
 From blogpost
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
