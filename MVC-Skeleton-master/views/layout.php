@@ -40,13 +40,13 @@
           Continents
             </a>
             <div class="dropdown-menu" aria-labelledby="continentDropdown">
-                <a class="dropdown-item" href="#">Africa</a>
-                <a class="dropdown-item" href="#">Antarctica</a>
-                <a class="dropdown-item" href="#">Asia</a>
-                <a class="dropdown-item" href="#">Australia</a>
-                <a class="dropdown-item" href="#">Europe</a>
-                <a class="dropdown-item" href="#">North America</a>
-                <a class="dropdown-item" href="#">South America</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=africa">Africa</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=antarctica">Antarctica</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=asia">Asia</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=australia">Australia</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=europe">Europe</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=northamerica">North America</a>
+                <a class="dropdown-item" href="?controller=blogpost&action=southamerica">South America</a>
             </div>
         </li>
     </ul>
