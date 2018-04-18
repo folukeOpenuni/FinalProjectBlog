@@ -7,7 +7,7 @@
     public $LastName;
     public $Email;
     public $DOB;
-    public $CountryID;
+    public $Country;
     public $Password;
     public $Image;
   
@@ -23,7 +23,7 @@
     $this->LastName = $LastName;
     $this->Email = $Email;
     $this->DOB = $DOB;
-    $this->CountryID = $CountryID;
+ //   $this->Country = $Country;
     $this->Password = $Password;
     $this->Image = $Image;
     }
@@ -33,11 +33,13 @@
         public static function add() {
     $db = Db::getInstance();
     $req = $db->prepare("Insert into personaldata(FirstName, LastName, Email, DOB, Password) values (:FirstName, :LastName, :Email, :DOB, :Password)");
+
     $req->bindParam(':FirstName', $FirstName);
     $req->bindParam(':LastName', $LastName);
     $req->bindParam(':Email', $Email);
     $req->bindParam(':DOB', $DOB);
     $req->bindParam(':Password', $Password);
+   // $req->bindParam(':Country', $Country);
    
     
 
@@ -61,11 +63,16 @@
         $filteredPassword = filter_input(INPUT_POST,'Password', FILTER_SANITIZE_SPECIAL_CHARS);
     }
     
+  //      if(isset($_POST['CountryID'])&& $_POST['CountryID']!=""){
+   //     $filteredCountry = filter_input(INPUT_POST,'CountryID', FILTER_SANITIZE_SPECIAL_CHARS);
+    //}
+    
 $FirstName = $filteredFirstName;
 $LastName = $filteredLastName;
 $Email = $filteredEmail;
 $DOB = $filteredDOB;
 $Password = $filteredPassword;
+
  $req->execute();
         }
   }

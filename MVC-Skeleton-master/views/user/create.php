@@ -20,10 +20,17 @@
         <label>DOB</label>
     </p>
     
+               <p>
+        <input class="w3-input" type="text" name="DOB" required>
+        <label>Country</label>
+    </p>
+    
        <p>
            <input class="w3-input" type="password" name="Password" required>
         <label>Password</label>
     </p>
+    
+  
     
    
     
