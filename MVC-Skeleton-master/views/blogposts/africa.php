@@ -1,11 +1,9 @@
 <!--STATIC HEADER IMAGE-->
 <section>
         <div class="text-white text-overlay">
-
             <img class="img-fluid" src="views/images/continent/africa.jpg"  alt="africa">
             <h1 class="text-centered">Africa</h1>
-            <p class="text-subhead">It's gonna take a lot to drag me away from you
-</p>
+            <p class="text-subhead">It's gonna take a lot to drag me away from you</p>
         </div>
 </section>
 
