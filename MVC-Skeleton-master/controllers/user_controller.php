@@ -11,8 +11,9 @@ Class userController {
       else { 
             User::add();
              
-            $users = User::all(); //$wants readAll - why?
-            require_once('views/user/create.php');
+          //  $users = User::all(); //$wants readAll - why?
+            //require_once('views/user/create.php');
+            echo 'Congratulations and welcome to the Gap Yah Community';
       }
     }
 }
