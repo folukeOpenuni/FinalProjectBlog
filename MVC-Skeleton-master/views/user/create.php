@@ -20,28 +20,24 @@
         <label>DOB</label>
     </p>
     
-               <p>
-        <input class="w3-input" type="text" name="DOB" required>
-        <label>Country</label>
-    </p>
+        
+    <select name="CountryID">
+  <option value="1">Afghanistan</option>
+  <option value="2">Albania</option>
+  <option value="3">Andorra</option>
+  <option value="4">Angola</option>
+</select>
     
        <p>
            <input class="w3-input" type="password" name="Password" required>
         <label>Password</label>
     </p>
     
+     <p>
+    <input class="w3-btn w3-pink" type="submit" value="Add Product">
+  </p>
   
     
    
     
-            
-  <input type="hidden" 
-	   name="MAX_FILE_SIZE" 
-         value="10000000"
-         />
-
-  <input type="file" name="myUploader" class="w3-btn w3-pink"/>
-  <p>
-    <input class="w3-btn w3-pink" type="submit" value="Add User">
-  </p>
 </form>
