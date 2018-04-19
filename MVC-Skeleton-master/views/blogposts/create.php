@@ -11,19 +11,27 @@
         <label>Date Published</label>
     </p>
     <p>
-        <input class="w3-input" type="text" name="WriterID"  >
-        <label>Writer</label>
+        <div class="form-group col-md-12">
+  <label for="WriterID">Writer</label>
+  <select class="form-control" id="WriterID" name="WriterID">
+    <option value="1">John Murray</option>
+    <option value="2">Andrea Orset</option>
+    <option value="3">Penny Yiota</option>
+    <option value="4">Kiera Kenney</option>
+  </select>
+        </div>
+ 
     </p>
     <p>
         <input class="w3-input" type="text" name="Content" >
         <label>Content</label>
     </p>
             
-  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+  <!--<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 
   <br/>
   <input type="file" name="myUploader" class="w3-btn w3-pink" />
-  <p>
+  <p>-->
     <input class="w3-btn w3-gray" type="submit" value="Create blogpost">
     </p>
 </form>
