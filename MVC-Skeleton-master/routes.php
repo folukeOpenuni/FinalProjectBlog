@@ -25,8 +25,10 @@
 // for validation we list the allowed controllers and their actions
 // Add an entry for each new controller and its actions
     $controllers = array('pages' => ['home', 'about', 'error'],
+
                     'blogpost' => ['readAll','read','create','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica'],
                     'user' => ['create'],
+ 
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
 
