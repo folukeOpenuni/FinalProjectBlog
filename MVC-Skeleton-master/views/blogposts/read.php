@@ -16,6 +16,7 @@
 <br>
 <br>
 <center>
+
     <img src="views/images/profilepicture/<?php echo $blogpost->WriterID;?>.jpg" alt="Avatar" class="avatar">
     <br>
     <br>
@@ -31,6 +32,7 @@
     }
     
 ?></p>
+
 
 <!--<p>Product BlogPostID: <?php //echo $blogpost->BlogPostID; ?></p>-->
 <div class="jumbotron">
