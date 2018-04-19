@@ -57,9 +57,15 @@
 
         </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search blog posts" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="?controller=blogpost&action=find" method="post" name="formname" >
+      <input class="form-control mr-sm-2" type="search" placeholder="Search blog posts"aria-label="Search" name="name">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value = "search">Search</button>
+     
+<?php 
+//if(isset($_POST['name'])){
+       //Ione changed to GET from POST
+      //  if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
+      //$name=$_POST['name'];}}?>
     </form>
   </div>
 </nav>      
