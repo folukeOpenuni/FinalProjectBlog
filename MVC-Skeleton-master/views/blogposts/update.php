@@ -43,6 +43,15 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
   <br/>
   <input type="file" name="myUploader" class="w3-btn w3-pink" />
   <p>
-    <input class="w3-btn w3-gray" type="submit" value="Update blogpost">
-    </p>
+      <button onclick="document.getElementById('id01').style.display='block'" class='w3-btn w3-gray' type='submit' value='Update blogpost'>Update</button>
+  </p>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Your post has been updated!</p>
+      </div>
+    </div>
+  </div>
+    
 </form>
