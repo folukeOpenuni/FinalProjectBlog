@@ -59,6 +59,24 @@ foreach($req->fetchAll() as $blogpost) {
    return $list;
  }
 
+<<<<<<< HEAD
+    public static function find() {
+      $db = Db::getInstance();
+      //use intval to make sure $id is an integer
+      if(isset($_POST['name'])){
+       
+        if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
+            $name=$_POST['name'];
+        }
+      }
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title, blogpost.Image, blogpost.DatePublished, blogpost.WriterID, blogpost.Content, country.Country, continent.Continent
+From blogpost
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID where Title like '%".$name."%' OR Country like '%".$name."%'OR Continent like '%".$name."%'");
+     foreach($req->fetchAll() as $blogpost) {
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['Image'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Country'], $blogpost['Continent']);
+=======
     public static function find($BlogPostID) {
        
       $db = Db::getInstance();
@@ -77,13 +95,11 @@ Inner Join continent on country.ContinentID = continent.ContinentID WHERE blogpo
       $blogpost = $req->fetch();
 if($blogpost){
       return new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'], $blogpost['FirstName'],$blogpost['LastName'],$blogpost['Content'], $blogpost['Image'],$blogpost['Country'],$blogpost['Continent']);
+>>>>>>> ae8c48514e60a2705bd02c2c02c826b8d0761a7d
 
-    }
-    else
-    {
-        //replace with a more meaningful exception
-        throw new Exception('A real exception should go here');
-    }
+}
+   return $list;
+ 
     }
 
 public static function update($BlogPostID) {
