@@ -103,9 +103,9 @@ $Content = $filteredContent;
 $req->execute();
 
 //upload product image if it exists
-        if (!empty($_FILES[self::InputKey]['Title'])) {
+        /*if (!empty($_FILES[self::InputKey]['Title'])) {
 		blogpost::uploadFile($Title);
-	}
+	}*/
 
     }
     
