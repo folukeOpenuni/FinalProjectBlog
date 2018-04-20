@@ -15,7 +15,7 @@ class blogpostController {
 
       try{
       // we use the given id to get the correct post
-      $blogpost = blogpost::find($_GET['BlogPostID']);
+      $blogpost = blogpost::read($_GET['BlogPostID']);
       require_once('views/blogposts/read.php');
       }
  catch (Exception $ex){
