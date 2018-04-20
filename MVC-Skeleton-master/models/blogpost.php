@@ -59,7 +59,7 @@ foreach($req->fetchAll() as $blogpost) {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
-      $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+        $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -68,7 +68,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-WHERE BlogPostID = :BlogPostID');
+WHERE blogpost.BlogPostID = :BlogPostID');
       //the query was prepared, now replace :id with the actual $id value
       $req->execute(array('BlogPostID' => $BlogPostID));
       $blogpost = $req->fetch();
@@ -92,13 +92,18 @@ if($blogpost){
             $name=$_POST['name'];
         }
       }
-      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title, blogpost.Image, blogpost.DatePublished, blogpost.WriterID, blogpost.Content, country.Country, continent.Continent
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
+inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
+inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
+Inner join writer on writer.WriterID= blogpost.WriterID
+Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
-Inner Join continent on country.ContinentID = continent.ContinentID where Title like '%".$name."%' OR Country like '%".$name."%'OR Continent like '%".$name."%'");
+Inner Join continent on country.ContinentID = continent.ContinentID
+where blogpost.Title like '%".$name."%' OR country.Country like '%".$name."%'OR continent.Continent like '%".$name."%'");
      foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'], $blogpost['Image'], $blogpost['DatePublished'], $blogpost['WriterID'], $blogpost['Content'], $blogpost['Country'], $blogpost['Continent']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
