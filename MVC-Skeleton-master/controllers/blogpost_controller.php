@@ -44,7 +44,7 @@ class blogpostController {
         return call('pages', 'error');
 
         // we use the given id to get the correct product
-        $blogpost = blogpost::find($_GET['BlogPostID']);
+        $blogpost = blogpost::read($_GET['BlogPostID']);
       
         require_once('views/blogposts/update.php');
         }
