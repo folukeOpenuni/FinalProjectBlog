@@ -180,15 +180,15 @@ $Content = $filteredContent;
 $req->execute();
 
 //upload product image
-//blogpost::uploadFile($Title);
-   // }
+blogpost::uploadFile($Title);
+   }
 
-//const AllowedTypes = ['image/jpeg', 'image/jpg'];
-//const InputKey = 'myUploader';
+const AllowedTypes = ['image/jpeg', 'image/jpg'];
+const InputKey = 'myUploader';
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-/*public static function uploadFile(string $Title) {
+public static function uploadFile(string $Title) {
 
 	if (empty($_FILES[self::InputKey])) {
 		//die("File Missing!");
@@ -206,7 +206,7 @@ $req->execute();
 
 	$tempFile = $_FILES[self::InputKey]['tmp_name'];
         $path = "/views/images/";
-	$destinationFile = $path . $Title . '.jpeg';
+	$destinationFile = $path . $Title;
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
 		trigger_error("Handle Error");
 	}
@@ -214,7 +214,7 @@ $req->execute();
 	//Clean up the temp file
 	if (file_exists($tempFile)) {
 		unlink($tempFile); 
-	}*/
+	}
 }
 public static function remove($BlogPostID) {
       $db = Db::getInstance();
