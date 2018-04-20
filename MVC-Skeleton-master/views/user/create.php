@@ -1,27 +1,46 @@
-<p>Join the Gap Yah Community!:</p>
-<form action="" method="POST" class="w3-container" enctype="multipart/form-data">
-    
-    <h2>Add Your Details</h2>
-</div>
-    <p>
-        <input class="w3-input" type="text" name="FirstName" required autofocus>
-        <label>First Name</label>
-    </p>
-        <p>
-        <input class="w3-input" type="text" name="LastName" required>
-        <label>Last Name</label>
-    </p>
-         <p>
-        <input class="w3-input" type="email" name="Email" required>
-        <label>Email</label>
-    </p>
-         <p>
-        <input class="w3-input" type="date" name="DOB" required>
-        <label>DOB</label>
-    </p>
-    
+
+
+<form action="" method="post" autocomplete="on" enctype="multipart/form-data">
+            <div class="container">
+            <h1>Join the Gap Yah Community!</h1>
+            <p>Gap Yah Ltd Membership is, and always will be, completely free.</p>
+         
+ 
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="firstname">First Name</label>
+            <input type="name" class="form-control" id="FirstName" name="FirstName" autofocus required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input type="name" class="form-control" id="LastName" name="LastName" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="DOB">Date of Birth</label>
+            <input type="Date" class="form-control" id="DOB" min="1900-01-01" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" name="DOB" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Email">Email Address</label>
+            <input type="email" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="Email" required>
+        </div>
+             </div>
         
-    <select name="CountryID">
+        
+            
+        <!--Password -->
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" id="name" name="Password">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Password">Confirm Password</label>
+            <input type="password" class="form-control" id="name" name="Password2">
+        </div>
+        </div>
+       
+       <br/> 
+            <select name="CountryID">
   <option value="1">Afghanistan</option>
   <option value="2">Albania</option>
   <option value="3">Andorra</option>
@@ -230,18 +249,25 @@
 
 
   </select>
+
+       <br> <br> 
+            
+        <!-- remember me checkbox and t&cs -->
+            <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+            
+           
+        
+     
+        
+            <button type="submit" class="signupbtn" >Sign Up</button>
+            <button type="button" class="cancelbtn">Cancel</button>
+             
+            <br>
+
+
+
 </div>
-    
-       <p>
-           <input class="w3-input" type="password" name="Password" required>
-        <label>Password</label>
-    </p>
-    
-     <p>
-    <input class="w3-btn w3-pink" type="submit" value="Add Product">
-  </p>
-  
-    
-   
-    
-</form>
