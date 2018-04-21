@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <p>Fill in the following form to create a post:</p>
 <form action="" method="POST" class="w3-container" enctype="multipart/form-data">
     <h2>Create Post</h2>

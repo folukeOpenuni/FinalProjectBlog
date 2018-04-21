@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <div class="w3-container w3-red">
 <p>Oops, this is the error page.</p>
 <img src="views/images/standard/_errorimage.jpg" width="150" />

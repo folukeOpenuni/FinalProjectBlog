@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <section>
         <div class="text-white text-overlay">
             <img class="img-fluid" src="views/images/road.jpg" alt="road">
