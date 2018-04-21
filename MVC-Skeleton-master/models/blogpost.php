@@ -229,7 +229,7 @@ $CountryID = $filteredCountryID;
 $req->execute();*/
 
 //upload product image
-blogpost::uploadFile($Title);
+/*blogpost::uploadFile($Title);
    }
 
 const AllowedTypes = ['image/jpeg', 'image/jpg'];
@@ -264,14 +264,14 @@ public static function uploadFile(string $DatePublished) {
 	//Clean up the temp file
 	if (file_exists($tempFile)) {
 		unlink($tempFile); 
-	}
+	}*/
 }
     
 public static function remove($BlogPostID) {
       $db = Db::getInstance();
       //make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
-      $req = $db->prepare('delete FROM BlogPost WHERE BlogPostID = :BlogPostID');
+      $req = $db->prepare('delete FROM blogpostkeyword WHERE BlogPostID = :BlogPostID; delete FROM blogpostcountry WHERE BlogPostID = :BlogPostID; delete FROM BlogPost WHERE BlogPostID = :BlogPostID');
       // the query was prepared, now replace :id with the actual $id value
       $req->execute(array('BlogPostID' => $BlogPostID));
   }
