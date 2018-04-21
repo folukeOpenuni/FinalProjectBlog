@@ -46,7 +46,7 @@
         </div>
     <div class="form-group col-md-12">
   <label for="CountryID">Country</label>
-    <select class="form-control" id="CountryID">
+    <select class="form-control" id="CountryID" name='CountryID'>
     <option value="1">Afghanistan</option>
     <option value="2">Albania</option>
     <option value="3">Algeria</option>
@@ -256,7 +256,7 @@
   <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 
   <br/>
-  <!--<input type="file" name="myUploader" class="w3-btn w3-pink" />-->
+  <input type="file" name="myUploader" class="w3-btn w3-pink" />
   <p>
     <input class="w3-btn w3-gray" type="submit" value="Create blogpost">
       </div>

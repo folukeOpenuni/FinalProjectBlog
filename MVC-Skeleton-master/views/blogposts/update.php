@@ -5,19 +5,17 @@
      <p>
         <div class="form-group col-md-12">
             <label>Title</label><br>
-        <input class="w3-input" type="text" name="Title" >
+        <input class="w3-input" type="text" name="Title"value="<?= $blogpost->Title; ?>" >
         </div>
-    </p>
-    <p> 
+    
         <div class="form-group col-md-12">
             <label>Date Published</label><br>
-        <input class="w3-input" type="text" name="DatePublished" Placeholder= "YYYY-MM-DD" >
+        <input class="w3-input" type="text" name="DatePublished" Placeholder= "YYYY-MM-DD" value="<?= $blogpost->DatePublished; ?>">
         </div>
-    </p>
-    <p>
+    
         <div class="form-group col-md-12">
   <label for="WriterID">Writer</label>
-  <select class="form-control" id="WriterID" name="WriterID">
+  <select class="form-control" id="WriterID" name="WriterID"value="<?= $blogpost->WriterID; ?>">
     <option value="1">John Murray</option>
     <option value="2">Andrea Orset</option>
     <option value="3">Penny Yiota</option>
@@ -25,14 +23,15 @@
   </select>
         </div>
  
-    </p>
-    <p>
+    
+   
         <div class="form-group col-lg-12">
             <label>Content</label><br>
-        <input class="w3-input" type="text" name="Content" rows='5'>
+        <input class="w3-input" type="text" name="Content" rows='5' value="<?= $blogpost->Content; ?>">
         </div>
-    </p>
-    <div class="form-group col-md-12">
+   
+    
+    <div class="form-group col-md-12">    
   <label for="KeywordID">Keyword</label>
   <select class="form-control" id="KeywordID" name="KeywordID">
     <option value="1">Beech</option>
@@ -46,7 +45,7 @@
         </div>
     <div class="form-group col-md-12">
   <label for="CountryID">Country</label>
-    <select class="form-control" id="CountryID">
+    <select class="form-control" id="CountryID" name= 'CountryID' value="<?= $blogpost->CountryID; ?>">
     <option value="1">Afghanistan</option>
     <option value="2">Albania</option>
     <option value="3">Algeria</option>
@@ -255,7 +254,7 @@
             
  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 <?php 
-/*$file = 'views/images/' . $blogpost->Title . '.jpeg';
+$file = 'views/images/' . $blogpost->Title . '.jpeg';
 if(file_exists($file)){
     $img = "<img src='$file' width='150' />";
     echo $img;
@@ -263,9 +262,10 @@ if(file_exists($file)){
 else
 {
 echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
-}*/
+}
 
 ?>
+</p>
   <br/>
   <input type="file" name="myUploader" class="w3-btn w3-pink" />
   <p>
