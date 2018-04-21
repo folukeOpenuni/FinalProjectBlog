@@ -57,6 +57,35 @@
 
         </li>
     </ul>
+<!-- LOGIN DROP DOWN  -->                    
+<div class="btn-group dropleft pr-1">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img style="height: 20px; width: 20px;" src="views/images/user.png"></button>
+        <div class="dropdown-menu">
+            <form class="px-4 py-3">
+                <div class="form-group">
+                    <label for="exampleDropdownFormEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                </div>        
+                <div class="form-group">
+                    <label for="exampleDropdownFormPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                    <label class="form-check-label" for="dropdownCheck">
+                    Remember me
+                    </label>
+                </div>
+            <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+            </form>
+                <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Register (required to loan items)</a>
+                    <a class="dropdown-item" href="#">Forgot password?</a>
+        </div>
+</div>     
+ 
+<!--SEARCH BAR-->
     <form class="form-inline my-2 my-lg-0" action="?controller=blogpost&action=find" method="post" name="formname" >
       <input class="form-control mr-sm-2" type="search" placeholder="Search blog posts"aria-label="Search" name="name">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value = "search">Search</button>
@@ -66,6 +95,7 @@
        //Ione changed to GET from POST
       //  if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
       //$name=$_POST['name'];}}?>
+
     </form>
   </div>
 </nav>      
