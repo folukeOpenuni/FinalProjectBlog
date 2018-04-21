@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!--STATIC HEADER IMAGE-->
 <section>
         <div class="text-white text-overlay">

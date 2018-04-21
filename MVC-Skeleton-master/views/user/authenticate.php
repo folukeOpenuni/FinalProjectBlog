@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <p>Join the Gap Yah Community!:</p>
 <form action="" method="POST" class="w3-container" enctype="multipart/form-data">
 </div>
