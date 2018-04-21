@@ -247,7 +247,8 @@ $CountryID = $filteredCountryID;
 $req->execute();*/
 
 //upload product image
-blogpost::uploadFile($Title);
+str_replace("/","-",$DatePublished,$i);
+blogpost::uploadFile($DatePublished);
    }
 
 const AllowedTypes = ['image/jpeg', 'image/jpg'];
@@ -255,7 +256,7 @@ const InputKey = 'myUploader';
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-public static function uploadFile(string $Title) {
+public static function uploadFile(string $DatePublished) {
 
 	if (empty($_FILES[self::InputKey])) {
 		//die("File Missing!");
@@ -270,10 +271,10 @@ public static function uploadFile(string $Title) {
 	if (!in_array($_FILES[self::InputKey]['type'], self::AllowedTypes)) {
 		trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey]['type']);
 	}
-
+str_replace("/","-",$DatePublished,$i);
 	$tempFile = $_FILES[self::InputKey]['tmp_name'];
-        $path = dirname(__DIR__) . "/views/images/";
-	$destinationFile = $path . $Title. '.jpeg';
+        $path = dirname(__DIR__) . "/views/blogposts/";
+	$destinationFile = $path . $DatePublished. '.jpeg';
         //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
 		trigger_error("Handle Error");
@@ -284,7 +285,7 @@ public static function uploadFile(string $Title) {
 		unlink($tempFile); 
 	}
         $db = Db::getInstance();
-     $req2 = $db->query("Update blogpost set Image='$Title.jpeg' where Title='$Title'");
+     $req2 = $db->query("Update blogpost set Image='$DatePublished.jpeg' where DatePublished='$DatePublished'");
      $req2->execute();
 }
     
