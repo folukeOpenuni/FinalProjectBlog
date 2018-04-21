@@ -8,6 +8,9 @@
     public $WriterID;
     public $Content;
     public $Image;
+    public $Image1;
+    public $Image2;
+    public $Image3;
     public $KeywordID;
     public $CountryID;
     public $ContinentID;
@@ -16,7 +19,7 @@
 
 
 
-    public function __construct($BlogPostID, $Title,  $DatePublished,$WriterID, $Content,$Image,$KeywordID, $CountryID, $ContinentID, $WriterFName, $WriterLName){
+    public function __construct($BlogPostID, $Title,  $DatePublished,$WriterID, $Content,$Image,$Image1, $Image2, $Image3, $KeywordID, $CountryID, $ContinentID, $WriterFName, $WriterLName){
 
             //$country, $keyword, $continent, $comment) {
      
@@ -26,6 +29,9 @@
     $this->WriterID = $WriterID;
     $this->Content = $Content;
     $this->Image = $Image;
+    $this->Image1 = $Image1;
+    $this->Image2 = $Image2;
+    $this->Image3= $Image3;
     $this->KeywordID = $KeywordID;
     $this->CountryID = $CountryID;
     $this->ContinentID = $ContinentID;
@@ -59,7 +65,7 @@ foreach($req->fetchAll() as $blogpost) {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
-        $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+        $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -73,7 +79,7 @@ WHERE blogpost.BlogPostID = :BlogPostID');
       $req->execute(array('BlogPostID' => $BlogPostID));
       $blogpost = $req->fetch();
 if($blogpost){
-      return new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+      return new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
     }
     else
     {
@@ -92,7 +98,7 @@ if($blogpost){
             $name=$_POST['name'];
         }
       }
-      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -287,7 +293,7 @@ public static function remove($BlogPostID) {
     //}
   $list = [];
  $db = Db::getInstance();
-$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -299,7 +305,7 @@ Inner Join continent on country.ContinentID = continent.ContinentID
 Where Continent = 'Africa'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
@@ -313,7 +319,7 @@ foreach($req->fetchAll() as $blogpost) {
     //}
   $list = [];
  $db = Db::getInstance();
-$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -325,7 +331,7 @@ Inner Join continent on country.ContinentID = continent.ContinentID
 Where Continent = 'Asia'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
@@ -333,7 +339,7 @@ foreach($req->fetchAll() as $blogpost) {
  public static function antarctica() {
   $list = [];
  $db = Db::getInstance();
-$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -345,7 +351,7 @@ Inner Join continent on country.ContinentID = continent.ContinentID
 Where Continent = 'Antarctica'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
@@ -353,7 +359,7 @@ foreach($req->fetchAll() as $blogpost) {
   public static function australia() {
   $list = [];
  $db = Db::getInstance();
-$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -365,7 +371,7 @@ Inner Join continent on country.ContinentID = continent.ContinentID
 Where Continent = 'Australia'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
@@ -373,7 +379,7 @@ foreach($req->fetchAll() as $blogpost) {
   public static function europe() {
   $list = [];
  $db = Db::getInstance();
-$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -385,7 +391,7 @@ Inner Join continent on country.ContinentID = continent.ContinentID
 Where Continent = 'Europe'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
@@ -393,7 +399,7 @@ foreach($req->fetchAll() as $blogpost) {
   public static function northamerica() {
   $list = [];
  $db = Db::getInstance();
-$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -405,7 +411,7 @@ Inner Join continent on country.ContinentID = continent.ContinentID
 Where Continent = 'North America'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
@@ -413,7 +419,7 @@ foreach($req->fetchAll() as $blogpost) {
   public static function southamerica() {
   $list = [];
  $db = Db::getInstance();
-$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+$req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, blogpost.Image1, blogpost.Image2, blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -425,7 +431,7 @@ Inner Join continent on country.ContinentID = continent.ContinentID
 Where Continent = 'South America'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'], $blogpost['Image1'], $blogpost['Image2'], $blogpost['Image3'], $blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
