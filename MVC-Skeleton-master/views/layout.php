@@ -80,7 +80,7 @@
             <button type="submit" class="btn btn-primary mt-3">Sign in</button>
             </form>
                 <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Register (required to loan items)</a>
+                    <a class="dropdown-item" href="#">Register</a>
                     <a class="dropdown-item" href="#">Forgot password?</a>
         </div>
 </div>     
