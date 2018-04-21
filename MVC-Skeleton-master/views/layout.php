@@ -57,15 +57,15 @@
 
         </li>
     </ul>
-<!-- LOGIN DROP DOWN  -->                    
-<div class="btn-group dropleft pr-1">
+<!-- LOGIN DROP DOWN  -->
+<div class="btn-group dropleft pr-2">
     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <img style="height: 20px; width: 20px;" src="views/images/user.png"></button>
         <div class="dropdown-menu">
-            <form class="px-4 py-3">
+            <form class="px-3 py-3">
                 <div class="form-group">
                     <label for="exampleDropdownFormEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="your@email.com">
                 </div>        
                 <div class="form-group">
                     <label for="exampleDropdownFormPassword1">Password</label>
@@ -77,7 +77,7 @@
                     Remember me
                     </label>
                 </div>
-            <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+            <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
                 <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Register</a>
@@ -88,7 +88,7 @@
 <!--SEARCH BAR-->
     <form class="form-inline my-2 my-lg-0" action="?controller=blogpost&action=find" method="post" name="formname" >
       <input class="form-control mr-sm-2" type="search" placeholder="Search blog posts"aria-label="Search" name="name">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value = "search">Search</button>
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit" value = "search">Search</button>
      
 <?php 
 //if(isset($_POST['name'])){
