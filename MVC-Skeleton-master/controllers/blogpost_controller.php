@@ -31,7 +31,7 @@ class blogpostController {
       }
       else { 
             blogpost::add();
-            blogpost::addkeywordcountry($list);
+           // blogpost::addkeywordcountry($list);
             $blogposts = blogpost::all(); //$products is used within the view
             require_once('views/blogposts/readAll.php');
       }

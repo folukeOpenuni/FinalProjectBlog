@@ -237,7 +237,7 @@ const InputKey = 'myUploader';
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-public static function uploadFile(string $DatePublished) {
+public static function uploadFile(string $Title) {
 
 	if (empty($_FILES[self::InputKey])) {
 		//die("File Missing!");
@@ -255,8 +255,8 @@ public static function uploadFile(string $DatePublished) {
 
 	$tempFile = $_FILES[self::InputKey]['tmp_name'];
         $path = dirname(__DIR__) . "/views/images/";
-	$destinationFile = $path . $DatePublished. '.jpeg';
-        $destinationFile = $path . $_FILES[self::InputKey][$DatePublished];
+	$destinationFile = $path . $Title. '.jpeg';
+        //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
 		trigger_error("Handle Error");
 	}
