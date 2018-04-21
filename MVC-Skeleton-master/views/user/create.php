@@ -1,11 +1,14 @@
-
-
+<section>
+        <div class="text-white text-overlay">
+            <img class="img-fluid" src="views/images/jumpingfriends.jpg" alt="crowd of friends at sunset">
+            <h1 class="text-centered">Join the Gap Yah Community!</h1>
+        </div>
+</section>
+<div class="left-pad bottom-pad">
 <form action="" method="post" autocomplete="on" enctype="multipart/form-data">
-            <div class="container-fluid">
-            <h1>Join the Gap Yah Community!</h1>
-            <p>Gap Yah Ltd Membership is, and always will be, completely free.</p>
-         
- 
+    <br>
+    <p>Gap Yah Ltd Membership is, and always will be, completely free.</p>
+
         <div class="form-row">
         <div class="form-group col-md-6">
             <label for="firstname">First Name</label>
@@ -259,15 +262,10 @@
 
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
             
-           
-        
-     
-        
+         
             <button type="submit" class="signupbtn btn btn-secondary" >Sign Up</button>
             <button type="button" class="cancelbtn btn btn-light">Cancel</button>
              
             <br>
-
-
-
+</div>
 </div>

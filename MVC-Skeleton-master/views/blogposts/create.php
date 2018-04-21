@@ -1,7 +1,7 @@
 <form action="" method="POST" class="w3-container" enctype="multipart/form-data">
     <div class="left-pad">
     <h1>Create Post</h1>
-    <p>Fill in the following form to create a post:</p>
+    <p>Fill in the form below to create a post:</p>
     </div>
         <div class="form-group col-md-12">
         <label>Title</label><br>
@@ -251,13 +251,29 @@
     <option value="203">Zimbabwe</option>
   </select>
 </div>
-        
+<!--IMAGE UPLOADS-->
 <div class="form-group col-md-12">
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-    <p>Upload featured image</p> <input type="file" name="myUploader"/>
+    <p>Upload 1 featured image:</p> <input type="file" name="myUploader"/>
     <br>
     <br>
-    <input class="btn btn-secondary" type="submit" value="Create blogpost">
-      </div>
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+    <p>Upload up to 3 secondary images:</p> <input id="myUploader" type="file" name="myUploader" multiple/>
+    <br>
+    <br>
+    <input class="btn btn-secondary" type="submit" value="submit">
+</div>
     </p>
 </form>
+
+<script>
+    $(function(){
+    $("input[type='submit']").click(function(){
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length)>3){
+         alert("You can only upload a maximum of 3 secondary images!");
+        }
+        else {$("myUploader").submit(); 
+    });    
+)};
+</script>

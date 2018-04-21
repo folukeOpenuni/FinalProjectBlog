@@ -115,7 +115,7 @@
         </div>
 <!--SECOND FOOTER COL-->
         <div class="col-md-4">
-            <h5>Log into our online community</h5>
+            <h5>Login to our online community</h5>
             <br>
             <!--< commented the below line out because we can't have href for a button -->
             <!--<button type="button" class="btn btn-lg btn-light" href='?controller=user&action=create'>Sign up</button> -->
