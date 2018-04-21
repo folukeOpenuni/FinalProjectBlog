@@ -1,5 +1,3 @@
-<?php session_start();?>
-
 <!--HEADER CAROUSEL-->
 <div id="headercarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">

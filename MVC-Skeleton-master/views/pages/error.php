@@ -1,5 +1,3 @@
-<?php session_start();?>
-
 <section>
     <br>
     <h1>Oops!</h1>

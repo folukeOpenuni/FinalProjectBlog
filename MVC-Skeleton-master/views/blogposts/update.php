@@ -1,5 +1,3 @@
-<?php session_start();?>
-
 <p>Fill in the following form to update an existing product:</p>
 <form action="" method="POST" class="w3-container" enctype="multipart/form-data">
     <h2>Update Item</h2>

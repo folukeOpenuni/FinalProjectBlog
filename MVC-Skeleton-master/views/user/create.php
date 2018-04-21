@@ -1,4 +1,3 @@
-<?php session_start();?>
 
 <form action="" method="post" autocomplete="on" enctype="multipart/form-data">
             <div class="container">
