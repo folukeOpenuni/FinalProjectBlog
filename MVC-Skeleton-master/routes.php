@@ -27,7 +27,7 @@
     $controllers = array('pages' => ['home', 'about', 'error'],
 
                     'blogpost' => ['readAll','read','create','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica'],
-                    'user' => ['create'],
+                    'user' => ['create', 'authenticate'],
  
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );

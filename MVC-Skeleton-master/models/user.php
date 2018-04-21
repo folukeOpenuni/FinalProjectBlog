@@ -27,10 +27,50 @@
     $this->Password = $Password;
     $this->CountryID = $CountryID;
     }
+  
+     
+      // username and password sent from form 
+    public static function authenticate() {
+      if($_SERVER["REQUEST_METHOD"] == "POST") {
+// set parameters and execute
+    if(isset($_POST['Email'])&& $_POST['Email']!=""){
+        $filteredEmail = filter_input(INPUT_POST,'Email', FILTER_SANITIZE_SPECIAL_CHARS);
+        //$filteredEmail = $_POST['Email'];
+    }
+    
+    if(isset($_POST['Password'])&& $_POST['Password']!=""){
+        $filteredPassword = filter_input(INPUT_POST,'Password', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    
+    $db = Db::getInstance();
 
+    $Email = $filteredEmail;
+    $Password = $filteredPassword;
+    //$sqlstring 
+    $req = $db->query("SELECT PersonalDataID FROM personaldata WHERE Email = '$Email' and password = '$Password'");
     
+    // = $db->query("SELECT PersonalDataID FROM personaldata WHERE Email = ':Email' and password = ':Password'");
+    //$req->bindParam(':Email', $Email);
+    //$req->bindParam(':Password', $Password);
+    $count = 0;
+   # $result = $req->execute();
+      foreach($req->fetchAll() as $temp) {
+          $count++;
+      }   
+      //If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count > 0) {
+         //session_register("Email");
+         $_SESSION['login_user'] = $Email;
+         //echo 'Successfully logged in';
+         //require_once('views/blogposts/read.php');
+      }else {
+         //echo 'Your login failed';
+      }
+      }
+    }
     
-        public static function add() {
+    public static function add() {
     $db = Db::getInstance();
     $req = $db->prepare("Insert into personaldata(FirstName, LastName, Email, DOB, Password, CountryID) values (:FirstName, :LastName, :Email, :DOB, :Password, :CountryID)");
 

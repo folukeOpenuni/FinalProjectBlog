@@ -115,6 +115,15 @@
         </div>
 <!--SECOND FOOTER COL-->
         <div class="col-md-4">
+            <h5>Log into our online community</h5>
+            <br>
+            <!--< commented the below line out because we can't have href for a button -->
+            <!--<button type="button" class="btn btn-lg btn-light" href='?controller=user&action=create'>Sign up</button> -->
+            <button type="button" class="btn btn-lg btn-light" onclick="window.location='?controller=user&action=authenticate';">Login</button>
+            <!--window.location='http://www.example.com';-->
+        </div>
+<!--THIRD FOOTER COL-->
+        <div class="col-md-4">
             <h5>Join our online community</h5>
             <br>
             <!--< commented the below line out because we can't have href for a button -->
@@ -122,7 +131,7 @@
             <button type="button" class="btn btn-lg btn-light" onclick="window.location='?controller=user&action=create';">Sign up</button>
             <!--window.location='http://www.example.com';-->
         </div>
-<!--THIRD FOOTER COL-->
+<!--FOURTH FOOTER COL-->
         <div class="col-md-4 text-center">
             <h5>Featured posts</h5>
                 <ul class="list-unstyled">
