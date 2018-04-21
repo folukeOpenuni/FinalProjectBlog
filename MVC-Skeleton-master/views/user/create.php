@@ -1,7 +1,7 @@
 
 
 <form action="" method="post" autocomplete="on" enctype="multipart/form-data">
-            <div class="container">
+            <div class="container-fluid">
             <h1>Join the Gap Yah Community!</h1>
             <p>Gap Yah Ltd Membership is, and always will be, completely free.</p>
          
@@ -27,7 +27,7 @@
         
         
             
-        <!--Password -->
+<!--PASSWORD -->
         <div class="form-row">
         <div class="form-group col-md-6">
             <label for="Password">Password</label>
@@ -237,7 +237,7 @@
     <option value="192">Uganda</option>
     <option value="193">Ukraine</option>
     <option value="194">United Arab Emirates</option>
-    <option value="195">United Kingdom</option>
+    <option selected="selected" value="195">United Kingdom</option>
     <option value="196">Uruguay</option>
      <option value="197">Uzbekistan</option>
     <option value="198">Vanuatu</option>
