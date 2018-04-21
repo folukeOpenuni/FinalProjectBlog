@@ -33,12 +33,21 @@
     
 ?></p>
 
+<div class="jumbotron">
+<p><?php echo $blogpost->Content; ?></p>
+
+<?php 
+//$file = 'views/images/' . $blogpost->Image1;
+//if(file_exists($file)){ ?>
+    
 <!--IMAGE CAROUSEL-->
+<H2><i>"I don't trust words, I trust pictures"</i> - Gilles Peress</H2>
+<p>Take a look for yourself through the eyes of a lens...</p>
 <div id="blogpostimages" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#blogpostimages" data-slide-to="0" class="active"></li>
+    <li data-target="#blogpostimages" data-slide-to="1"></li>
+    <li data-target="#blogpostimages" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -59,24 +68,13 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-
-<!--<p>Product BlogPostID: <?php //echo $blogpost->BlogPostID; ?></p>-->
-<div class="jumbotron">
-<p><?php echo $blogpost->Content; ?></p>
-</div>
-
-<!--DO WE NEED THE BELOW? OR CAN WE MAKE A PHOTO MANDATORY WHEN UPLOADING A BLOG-->
-<?php 
-$file = 'views/images/' . $blogpost->Image;
-if(file_exists($file)){
-    $img = "<img src='$file' width='150' />";
-    echo $img;
-}
+</div>    
+<!--}
 else
 {
-echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
-}
+echo "<img src='views/images/standard/noimage.jpg' width='auto' />";
+}-->
 
 ?>
+</div>
 </center>	
