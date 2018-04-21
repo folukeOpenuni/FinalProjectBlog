@@ -15,7 +15,7 @@ class blogpostController {
 
       try{
       // we use the given id to get the correct post
-      $blogpost = blogpost::find($_GET['BlogPostID']);
+      $blogpost = blogpost::read($_GET['BlogPostID']);
       require_once('views/blogposts/read.php');
       }
  catch (Exception $ex){
@@ -31,7 +31,7 @@ class blogpostController {
       }
       else { 
             blogpost::add();
-             
+           // blogpost::addkeywordcountry($list);
             $blogposts = blogpost::all(); //$products is used within the view
             require_once('views/blogposts/readAll.php');
       }
@@ -44,7 +44,7 @@ class blogpostController {
         return call('pages', 'error');
 
         // we use the given id to get the correct product
-        $blogpost = blogpost::find($_GET['BlogPostID']);
+        $blogpost = blogpost::read($_GET['BlogPostID']);
       
         require_once('views/blogposts/update.php');
         }
