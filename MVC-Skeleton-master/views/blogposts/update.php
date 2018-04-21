@@ -26,8 +26,13 @@
     
    
         <div class="form-group col-lg-12">
-            <label>Content</label><br>
-        <input class="w3-input" type="text" name="Content" rows='5' value="<?= $blogpost->Content; ?>">
+            <label>Paragraph 1</label><br>
+        <input class="w3-input" type="text" name="ContentP1" rows='5' value="<?= $blogpost->ContentP1; ?>">
+        </div>
+     
+      <div class="form-group col-lg-12">
+            <label>Paragraph 2</label><br>
+        <input class="w3-input" type="text" name="ContentP2" rows='5' value="<?= $blogpost->ContentP2; ?>">
         </div>
    
     

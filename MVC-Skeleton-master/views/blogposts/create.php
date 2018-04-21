@@ -28,8 +28,14 @@
     </p>
     <p>
         <div class="form-group col-lg-12">
-            <label>Content</label><br>
-        <input class="w3-input" type="text" name="Content" rows='5'>
+            <label>Paragraph 1</label><br>
+        <input class="w3-input" type="text" name="ContentP1" rows='5'>
+        </div>
+    </p>
+    <p>
+        <div class="form-group col-lg-12">
+            <label>Paragraph 2</label><br>
+        <input class="w3-input" type="text" name="ContentP2" rows='5'>
         </div>
     </p>
     <div class="form-group col-md-12">
