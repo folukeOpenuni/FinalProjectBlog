@@ -109,13 +109,13 @@
     <div class="row">
 
 <!--FIRST FOOTER COL-->
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h5>Get in touch</h5>
             <p>Call: 0113 2234455</p>
             <p>Email: <a href="mailto:hello@gapyah.com" style="color:white">hello@gapyah.com</a></p>
         </div>
 <!--SECOND FOOTER COL-->
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h5>Log into our online community</h5>
             <br>
             <!--< commented the below line out because we can't have href for a button -->
@@ -124,7 +124,7 @@
             <!--window.location='http://www.example.com';-->
         </div>
 <!--THIRD FOOTER COL-->
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h5>Join our online community</h5>
             <br>
             <!--< commented the below line out because we can't have href for a button -->
@@ -133,7 +133,7 @@
             <!--window.location='http://www.example.com';-->
         </div>
 <!--FOURTH FOOTER COL-->
-        <div class="col-md-4 text-center">
+        <div class="col-md-3 text-center">
             <h5>Featured posts</h5>
                 <ul class="list-unstyled">
                     <li>
