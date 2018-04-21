@@ -10,7 +10,7 @@
     
         <div class="form-group col-md-12">
             <label>Date Published</label><br>
-        <input class="w3-input" type="text" name="DatePublished" Placeholder= "YYYY-MM-DD" value="<?= $blogpost->DatePublished; ?>">
+        <input class="w3-input" type="date" name="DatePublished" Placeholder= "YYYY-MM-DD" value="<?= $blogpost->DatePublished; ?>">
         </div>
     
         <div class="form-group col-md-12">
