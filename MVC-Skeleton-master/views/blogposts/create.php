@@ -28,8 +28,14 @@
     </p>
     <p>
         <div class="form-group col-lg-12">
-            <label>Content</label><br>
-        <input class="w3-input" type="text" name="Content" rows='5'>
+            <label>Paragraph 1</label><br>
+        <input class="w3-input" type="text" name="ContentP1" rows='5'>
+        </div>
+    </p>
+    <p>
+        <div class="form-group col-lg-12">
+            <label>Paragraph 2</label><br>
+        <input class="w3-input" type="text" name="ContentP2" rows='5'>
         </div>
     </p>
     <div class="form-group col-md-12">
@@ -252,12 +258,47 @@
     <option value="203">Zimbabwe</option>
   </select>
 </div>
-      <div class="form-group col-md-12">      
+      <div class="form-group col-md-12" name="HeaderImage">   
+           <label for="HeaderImage">Header Image</label>
   <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 
   <br/>
   <input type="file" name="myUploader" class="w3-btn w3-pink" />
   <p>
+      </div>
+       <!-- <div class="form-group col-md-6" name="Image1"> 
+             <label for="Image1">Image 1</label>
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
+  <br/>
+  <input type="file" name="myUploader" class="w3-btn w3-pink" />
+  <p>
+        </div>
+    <div class="form-group col-md-6" name="Image2"> 
+        <label for="Image2">Image 2</label>     
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
+  <br/>
+  <input type="file" name="myUploader" class="w3-btn w3-pink" />
+  <p>
+        </div>
+    <div class="form-group col-md-6" name="Image3">    
+        <label for="Image3">Image 3</label>
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
+  <br/>
+  <input type="file" name="myUploader" class="w3-btn w3-pink" />
+  <p>
+        </div>
+    <div class="form-group col-md-6" name="Image4">  
+        <label for="Image4">Image 4</label>
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
+  <br/>
+  <input type="file" name="myUploader" class="w3-btn w3-pink" />
+  <p>
+        </div>-->
+  <div>
     <input class="w3-btn w3-gray" type="submit" value="Create blogpost">
       </div>
     </p>
