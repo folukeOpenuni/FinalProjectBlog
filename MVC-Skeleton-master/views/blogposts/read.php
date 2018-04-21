@@ -36,13 +36,14 @@
 <div class="jumbotron">
 <p><?php echo $blogpost->Content; ?></p>
 
+<H2><i>"I don't trust words, I trust pictures"</i> - Gilles Peress</H2>
+<p>Take a look for yourself through the eyes of a lens...</p>
+
 <?php 
 //$file = 'views/images/' . $blogpost->Image1;
 //if(file_exists($file)){ ?>
     
 <!--IMAGE CAROUSEL-->
-<H2><i>"I don't trust words, I trust pictures"</i> - Gilles Peress</H2>
-<p>Take a look for yourself through the eyes of a lens...</p>
 <div id="blogpostimages" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#blogpostimages" data-slide-to="0" class="active"></li>
@@ -68,13 +69,14 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>    
-<!--}
+</div>
+<!--echo $img;
+}
 else
 {
 echo "<img src='views/images/standard/noimage.jpg' width='auto' />";
-}-->
+}
 
-?>
+?>-->
 </div>
 </center>	

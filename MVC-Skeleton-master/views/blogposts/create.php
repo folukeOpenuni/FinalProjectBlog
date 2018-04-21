@@ -252,13 +252,13 @@
     <option value="203">Zimbabwe</option>
   </select>
 </div>
-      <div class="form-group col-md-12">      
-  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-
-  <br/>
-  <input type="file" name="myUploader" class="w3-btn w3-pink" />
-  <p>
-    <input class="w3-btn w3-gray" type="submit" value="Create blogpost">
+        
+<div class="form-group col-md-12">
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+    <p>Upload featured image</p> <input type="file" name="myUploader"/>
+    <br>
+    <br>
+    <input class="btn btn-secondary" type="submit" value="Create blogpost">
       </div>
     </p>
 </form>
