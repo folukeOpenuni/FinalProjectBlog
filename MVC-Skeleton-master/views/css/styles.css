@@ -7,7 +7,11 @@ html, body, h1, h2, h3, h4, h5, h6 {
 .container-fluid {
     padding-top: 60px;
     padding-bottom: 60px;
-} 
+}
+
+.left-pad {
+    padding-left: 15px;
+}
 
 .bottom-pad{
     padding-bottom: 60px;

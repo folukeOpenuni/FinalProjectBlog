@@ -1,14 +1,13 @@
-<p>Fill in the following form to create a post:</p>
 <form action="" method="POST" class="w3-container" enctype="multipart/form-data">
-    <h2>Create Post</h2>
-    
-    <p>
+    <div class="left-pad">
+    <h1>Create Post</h1>
+    <p>Fill in the following form to create a post:</p>
+    </div>
         <div class="form-group col-md-12">
-            <label>Title</label><br>
+        <label>Title</label><br>
         <input class="w3-input" type="text" name="Title" >
         </div>
-    </p>
-    <p> 
+
         <div class="form-group col-md-12">
             <label>Date Published</label><br>
         <input class="w3-input" type="text" name="DatePublished" Placeholder= "YYYY-MM-DD" >

@@ -38,9 +38,9 @@
             <input type="password" class="form-control" id="name" name="Password2">
         </div>
         </div>
-       
-       <br/> 
-            <select name="CountryID">
+<!-- COUNTRY OF ORIGIN-->
+       <label for="CountryID">Country of origin</label><br>
+  <select name="CountryID">
   <option value="1">Afghanistan</option>
   <option value="2">Albania</option>
   <option value="3">Andorra</option>
@@ -263,8 +263,8 @@
         
      
         
-            <button type="submit" class="signupbtn" >Sign Up</button>
-            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn btn btn-secondary" >Sign Up</button>
+            <button type="button" class="cancelbtn btn btn-light">Cancel</button>
              
             <br>
 
