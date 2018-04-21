@@ -1,7 +1,8 @@
 <?php session_start();?>
 
-<div class="w3-container w3-red">
-<p>Oops, this is the error page.</p>
-<img src="views/images/standard/_errorimage.jpg" width="150" />
-<p>It looks like something went wrong :(</p>
-</div>
+<section>
+    <br>
+    <h1>Oops!</h1>
+    <p>You took a wrong turn traveler!</p>    
+    <img class="img-fluid" src="../images/standard/errorimage.jpg" alt="sad face" width="auto" height="200px">
+</section>
