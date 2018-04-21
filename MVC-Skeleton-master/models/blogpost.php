@@ -123,10 +123,8 @@ public static function update($BlogPostID) {
     $req->bindParam(':KeywordID', $KeywordID);
     $req->bindParam(':CountryID', $CountryID);
     
-// set name and price parameters and execute
-    //if(isset($_POST['BlogPostID'])&& $_POST['BlogPostID']!=""){
-       //$filteredBlogPostID = filter_input(INPUT_POST,'BlogPostID', FILTER_SANITIZE_SPECIAL_CHARS);
-  // }
+// set parameters and execute
+
     if(isset($_POST['Title'])&& $_POST['Title']!=""){
         $filteredTitle = filter_input(INPUT_POST,'Title', FILTER_SANITIZE_SPECIAL_CHARS);
     }
@@ -146,7 +144,7 @@ public static function update($BlogPostID) {
     if(isset($_POST['CountryID'])&& $_POST['CountryID']!=""){
         $filteredCountryID = filter_input(INPUT_POST,'CountryID', FILTER_SANITIZE_SPECIAL_CHARS);
     }
-//$BlogPostID = $filteredBlogPostID;
+    
 $Title = $filteredTitle;
 $DatePublished = $filteredDatePublished;
 $WriterID=$filteredWriterID;
@@ -154,7 +152,6 @@ $Content = $filteredContent;
 $KeywordID = $filteredKeywordID;
 $CountryID = $filteredCountryID;
 $req->execute();
-
 
 //upload product image if it exists
         if (!empty($_FILES[self::InputKey]['Title'])) {
