@@ -40,14 +40,21 @@
           Continents
             </a>
             <div class="dropdown-menu" aria-labelledby="continentDropdown">
-                <a class="dropdown-item" href="?controller=blogpost&action=africa">Africa</a>
-                <a class="dropdown-item" href="?controller=blogpost&action=antarctica">Antarctica</a>
-                <a class="dropdown-item" href="?controller=blogpost&action=asia">Asia</a>
-                <a class="dropdown-item" href="?controller=blogpost&action=australia">Australia</a>
-                <a class="dropdown-item" href="?controller=blogpost&action=europe">Europe</a>
-                <a class="dropdown-item" href="?controller=blogpost&action=northamerica">North America</a>
-                <a class="dropdown-item" href="?controller=blogpost&action=southamerica">South America</a>
+
+                <a class="dropdown-item" href='?controller=continent&action=africa'>Africa</a>
+                <a class="dropdown-item" href="#">Antarctica</a>
+                <a class="dropdown-item" href="#">Asia</a>
+                <a class="dropdown-item" href="#">Australia</a>
+                <a class="dropdown-item" href="#">Europe</a>
+                <a class="dropdown-item" href="#">North America</a>
+                <a class="dropdown-item" href="#">South America</a>
+
             </div>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link" href='?controller=blogpost&action=create'>Upload Post</a>
+
         </li>
     </ul>
 <!-- LOGIN DROP DOWN  -->                    
@@ -77,11 +84,18 @@
                     <a class="dropdown-item" href="#">Forgot password?</a>
         </div>
 </div>     
-        
+ 
 <!--SEARCH BAR-->
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search blog posts" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="?controller=blogpost&action=find" method="post" name="formname" >
+      <input class="form-control mr-sm-2" type="search" placeholder="Search blog posts"aria-label="Search" name="name">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value = "search">Search</button>
+     
+<?php 
+//if(isset($_POST['name'])){
+       //Ione changed to GET from POST
+      //  if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
+      //$name=$_POST['name'];}}?>
+
     </form>
   </div>
 </nav>      
@@ -103,7 +117,10 @@
         <div class="col-md-4">
             <h5>Join our online community</h5>
             <br>
-            <button type="button" class="btn btn-lg btn-light" href="#">Sign up</button>
+            <!--< commented the below line out because we can't have href for a button -->
+            <!--<button type="button" class="btn btn-lg btn-light" href='?controller=user&action=create'>Sign up</button> -->
+            <button type="button" class="btn btn-lg btn-light" onclick="window.location='?controller=user&action=create';">Sign up</button>
+            <!--window.location='http://www.example.com';-->
         </div>
 <!--THIRD FOOTER COL-->
         <div class="col-md-4 text-center">

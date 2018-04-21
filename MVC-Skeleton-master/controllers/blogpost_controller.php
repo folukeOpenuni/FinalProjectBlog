@@ -110,10 +110,19 @@ class blogpostController {
       require_once('views/blogposts/southamerica.php');
       }
       
+      public function find() {
+          //$name = $_GET['name'];
+          
+ 
+        $blogposts = blogpost::find();
+
+      require_once('views/pages/SearchResults.php');
+      }
  
  }
       
       
-    
+      
+
   
 ?>
