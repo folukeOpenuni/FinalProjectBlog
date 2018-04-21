@@ -166,6 +166,7 @@ $req->execute();
     
     public static function add() {
     $db = Db::getInstance();
+    
     $req = $db->prepare("Insert into blogpost(Title, DatePublished, WriterID, Content) values (:Title, :DatePublished, :WriterID, :Content)");
     $req->bindParam(':Title', $Title);
     $req->bindParam(':DatePublished', $DatePublished);
@@ -229,7 +230,7 @@ $CountryID = $filteredCountryID;
 $req->execute();*/
 
 //upload product image
-/*blogpost::uploadFile($Title);
+blogpost::uploadFile($Title);
    }
 
 const AllowedTypes = ['image/jpeg', 'image/jpg'];
@@ -264,7 +265,10 @@ public static function uploadFile(string $Title) {
 	//Clean up the temp file
 	if (file_exists($tempFile)) {
 		unlink($tempFile); 
-	}*/
+	}
+        $db = Db::getInstance();
+     $req2 = $db->query("Update blogpost set Image='$Title.jpeg' where Title='$Title'");
+     $req2->execute();
 }
     
 public static function remove($BlogPostID) {
