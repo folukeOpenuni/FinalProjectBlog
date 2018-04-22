@@ -174,7 +174,7 @@ $req->execute();
     
     }
     
-    public static function add() {
+        public static function add() {
     $db = Db::getInstance();
     
     $req = $db->prepare("Insert into blogpost(Title, DatePublished, WriterID, ContentP1, ContentP2) values (:Title, :DatePublished, :WriterID, :ContentP1, :ContentP2)");
@@ -207,27 +207,31 @@ $WriterID = $filteredWriterID;
 $ContentP1 = $filteredContentP1;
 $ContentP2 = $filteredContentP2;
 $req->execute();
-
+$BlogPostID = blogpost::getBlogPostID($filteredTitle); 
+return $BlogPostID;
+    }
 //Insert Keyword
-
-    /*$db = Db::getInstance();
-     $req2 = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
-From blogpost
-inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
-inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
-Inner join writer on writer.WriterID= blogpost.WriterID
-Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
-Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
-Inner Join country ON blogpostcountry.CountryID = country.CountryID
-Inner Join continent on country.ContinentID = continent.ContinentID
-where blogpost.Title ='$filteredTitle'");
-     $req2->fetchAll() as $blogpost; 
+public function getBlogPostID($filteredTitle){
+    $db = Db::getInstance();
+     $req = $db->query("Select BlogPostID From blogpost where Title ='$filteredTitle'");
+    //$req->execute();
+      $blogpost = $req->fetch();
+      $BlogPostID =$blogpost["BlogPostID"];
+      return $BlogPostID;
+/*if($blogpost){
+      return new blogpost($blogpost['BlogPostID']);
+    }
+    else
+    {
+        //replace with a more meaningful exception
+        throw new Exception('A real exception should go here');
+    }*/
    
- }
-    public function addkeywordcountry($list){
+    }
+    public function addkeywordcountry($BlogPostID){
  
     $db = Db::getInstance();
-     $req = $db->prepare('Insert into blogpostkeyword(BlogPostID, KeywordID) values ('.$blogpost->BlogPostID.', :KeywordID); Insert into blogpostcountry('.$blogpost->BlogPostID.', CountryID) values (:BlogPostID, :CountryID)');
+     $req = $db->prepare('Insert into blogpostkeyword(BlogPostID, KeywordID) values ('.$BlogPostID.', :KeywordID); Insert into blogpostcountry(BlogPostID, CountryID) values ('.$BlogPostID.', :CountryID)');
     $req->bindParam(':KeywordID', $KeywordID);
     $req->bindParam(':CountryID', $CountryID);
 
@@ -242,11 +246,12 @@ where blogpost.Title ='$filteredTitle'");
     
 $KeywordID = $filteredKeywordID;
 $CountryID = $filteredCountryID;
-$req->execute();*/
+$req->execute();
+$req->closeCursor();
 
 //upload product image
 //str_replace("/","-",$DatePublished,$i);
-blogpost::uploadFile($Title);
+blogpost::uploadFile($BlogPostID);
    }
 
 const AllowedTypes = ['image/jpeg', 'image/jpg'];
@@ -254,7 +259,7 @@ const InputKey = 'myUploader';
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-public static function uploadFile(string $Title) {
+public static function uploadFile(string $BlogPostID) {
 
 	if (empty($_FILES[self::InputKey])) {
 		//die("File Missing!");
@@ -272,7 +277,7 @@ public static function uploadFile(string $Title) {
 //str_replace("/","-",$DatePublished,$i);
 	$tempFile = $_FILES[self::InputKey]['tmp_name'];
         $path = dirname(__DIR__) . "/views/blogposts/";
-	$destinationFile = $path . $Title. '.jpeg';
+	$destinationFile = $path . $BlogPostID. '.jpeg';
         //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
 		trigger_error("Handle Error");
@@ -283,7 +288,7 @@ public static function uploadFile(string $Title) {
 		unlink($tempFile); 
 	}
         $db = Db::getInstance();
-     $req2 = $db->query("Update blogpost set Image='$Title.jpeg' where Title='$Title'");
+     $req2 = $db->query("Update blogpost set Image='$BlogPostID.jpeg' where BlogPostID='$BlogPostID'");
      $req2->execute();
 }
     
