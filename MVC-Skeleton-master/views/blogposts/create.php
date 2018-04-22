@@ -1,8 +1,7 @@
+<p>Fill in the following form to create a post:</p>
 <form action="" method="POST" class="w3-container" enctype="multipart/form-data">
-    <div class="left-pad">
-    <h1>Create Post</h1>
-    <p>Fill in the form below to create a post:</p>
-    </div>
+    <h2>Create Post</h2>
+    
     <p>
         <div class="form-group col-md-12">
             <label>Title</label><br>
@@ -51,9 +50,9 @@
        <option value="7">Relaxation</option>
   </select>
         </div>
-<div class="form-group col-md-12">
-<label for="CountryID">Country</label>
-<select class="form-control" id="CountryID" name='CountryID'>
+    <div class="form-group col-md-12">
+  <label for="CountryID">Country</label>
+    <select class="form-control" id="CountryID" name='CountryID'>
     <option value="1">Afghanistan</option>
     <option value="2">Albania</option>
     <option value="3">Algeria</option>

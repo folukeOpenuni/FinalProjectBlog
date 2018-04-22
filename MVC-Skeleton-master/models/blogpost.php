@@ -30,7 +30,7 @@
     $this->WriterID = $WriterID;
     $this->ContentP1 = $ContentP1;
      $this->ContentP2 = $ContentP2;
-    $this->HeaderImage = $Image;
+    $this->Image = $Image;
     $this->Image1 = $Image1;
     $this->Image2 = $Image2;
     $this->Image3 = $Image3;
@@ -67,7 +67,7 @@ foreach($req->fetchAll() as $blogpost) {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
-        $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.HeaderImage, blogpost.Image1, blogpost.Image2,blogpost.Image3,blogpost.Image4,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+        $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -174,7 +174,7 @@ $req->execute();
     
     }
     
-    public static function add() {
+        public static function add() {
     $db = Db::getInstance();
     
     $req = $db->prepare("Insert into blogpost(Title, DatePublished, WriterID, ContentP1, ContentP2) values (:Title, :DatePublished, :WriterID, :ContentP1, :ContentP2)");
@@ -207,27 +207,31 @@ $WriterID = $filteredWriterID;
 $ContentP1 = $filteredContentP1;
 $ContentP2 = $filteredContentP2;
 $req->execute();
-
+$BlogPostID = blogpost::getBlogPostID($filteredTitle); 
+return $BlogPostID;
+    }
 //Insert Keyword
-
-    /*$db = Db::getInstance();
-     $req2 = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.Content, blogpost.Image, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
-From blogpost
-inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
-inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
-Inner join writer on writer.WriterID= blogpost.WriterID
-Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
-Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
-Inner Join country ON blogpostcountry.CountryID = country.CountryID
-Inner Join continent on country.ContinentID = continent.ContinentID
-where blogpost.Title ='$filteredTitle'");
-     $req2->fetchAll() as $blogpost; 
+public function getBlogPostID($filteredTitle){
+    $db = Db::getInstance();
+     $req = $db->query("Select BlogPostID From blogpost where Title ='$filteredTitle'");
+    //$req->execute();
+      $blogpost = $req->fetch();
+      $BlogPostID =$blogpost["BlogPostID"];
+      return $BlogPostID;
+/*if($blogpost){
+      return new blogpost($blogpost['BlogPostID']);
+    }
+    else
+    {
+        //replace with a more meaningful exception
+        throw new Exception('A real exception should go here');
+    }*/
    
- }
-    public function addkeywordcountry($list){
+    }
+    public function addkeywordcountry($BlogPostID){
  
     $db = Db::getInstance();
-     $req = $db->prepare('Insert into blogpostkeyword(BlogPostID, KeywordID) values ('.$blogpost->BlogPostID.', :KeywordID); Insert into blogpostcountry('.$blogpost->BlogPostID.', CountryID) values (:BlogPostID, :CountryID)');
+     $req = $db->prepare('Insert into blogpostkeyword(BlogPostID, KeywordID) values ('.$BlogPostID.', :KeywordID); Insert into blogpostcountry(BlogPostID, CountryID) values ('.$BlogPostID.', :CountryID)');
     $req->bindParam(':KeywordID', $KeywordID);
     $req->bindParam(':CountryID', $CountryID);
 
@@ -242,11 +246,12 @@ where blogpost.Title ='$filteredTitle'");
     
 $KeywordID = $filteredKeywordID;
 $CountryID = $filteredCountryID;
-$req->execute();*/
+$req->execute();
+$req->closeCursor();
 
 //upload product image
 //str_replace("/","-",$DatePublished,$i);
-blogpost::uploadFile($Title);
+blogpost::uploadFile($BlogPostID);
    }
 
 const AllowedTypes = ['image/jpeg', 'image/jpg'];
@@ -254,7 +259,7 @@ const InputKey = 'myUploader';
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-public static function uploadFile(string $Title) {
+public static function uploadFile(string $BlogPostID) {
 
 	if (empty($_FILES[self::InputKey])) {
 		//die("File Missing!");
@@ -272,7 +277,7 @@ public static function uploadFile(string $Title) {
 //str_replace("/","-",$DatePublished,$i);
 	$tempFile = $_FILES[self::InputKey]['tmp_name'];
         $path = dirname(__DIR__) . "/views/blogposts/";
-	$destinationFile = $path . $Title. '.jpeg';
+	$destinationFile = $path . $BlogPostID. '.jpeg';
         //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
 		trigger_error("Handle Error");
@@ -283,10 +288,129 @@ public static function uploadFile(string $Title) {
 		unlink($tempFile); 
 	}
         $db = Db::getInstance();
-     $req2 = $db->query("Update blogpost set Image='$Title.jpeg' where Title='$Title'");
+     $req2 = $db->query("Update blogpost set Image='$BlogPostID.jpeg' where BlogPostID='$BlogPostID'");
      $req2->execute();
+     blogpost::uploadFile2($BlogPostID);
+   }
+
+const AllowedTypes2 = ['image/jpeg', 'image/jpg'];
+const InputKey2 = 'myUploader2';
+
+//die() function calls replaced with trigger_error() calls
+//replace with structured exception handling
+public static function uploadFile2(string $BlogPostID) {
+
+	if (empty($_FILES[self::InputKey2])) {
+		//die("File Missing!");
+                trigger_error("File Missing!");
+	}
+
+	if ($_FILES[self::InputKey2]['error'] > 0) {
+		trigger_error("Handle the error! " . $_FILES[InputKey]['error']);
+	}
+
+
+	if (!in_array($_FILES[self::InputKey2]['type'], self::AllowedTypes2)) {
+		trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey2]['type']);
+	}
+//str_replace("/","-",$DatePublished,$i);
+	$tempFile = $_FILES[self::InputKey2]['tmp_name'];
+        $path = dirname(__DIR__) . "/views/blogposts/";
+	$destinationFile = $path . $BlogPostID. '.1.jpeg';
+        //$destinationFile = $path . $_FILES[self::InputKey][$Title];
+	if (!move_uploaded_file($tempFile, $destinationFile)) {
+		trigger_error("Handle Error");
+	}
+		
+	//Clean up the temp file
+	if (file_exists($tempFile)) {
+		unlink($tempFile); 
+	}
+        $db = Db::getInstance();
+     $req3 = $db->query("Update blogpost set Image1='$BlogPostID.1.jpeg' where BlogPostID='$BlogPostID'");
+     $req3->execute();
+     
+     blogpost::uploadFile3($BlogPostID);
+   }
+
+const AllowedTypes3 = ['image/jpeg', 'image/jpg'];
+const InputKey3 = 'myUploader3';
+
+//die() function calls replaced with trigger_error() calls
+//replace with structured exception handling
+public static function uploadFile3(string $BlogPostID) {
+
+	if (empty($_FILES[self::InputKey3])) {
+		//die("File Missing!");
+                trigger_error("File Missing!");
+	}
+
+	if ($_FILES[self::InputKey3]['error'] > 0) {
+		trigger_error("Handle the error! " . $_FILES[InputKey]['error']);
+	}
+
+
+	if (!in_array($_FILES[self::InputKey3]['type'], self::AllowedTypes3)) {
+		trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey3]['type']);
+	}
+//str_replace("/","-",$DatePublished,$i);
+	$tempFile = $_FILES[self::InputKey3]['tmp_name'];
+        $path = dirname(__DIR__) . "/views/blogposts/";
+	$destinationFile = $path . $BlogPostID. '.2.jpeg';
+        //$destinationFile = $path . $_FILES[self::InputKey][$Title];
+	if (!move_uploaded_file($tempFile, $destinationFile)) {
+		trigger_error("Handle Error");
+	}
+		
+	//Clean up the temp file
+	if (file_exists($tempFile)) {
+		unlink($tempFile); 
+	}
+        $db = Db::getInstance();
+     $req3 = $db->query("Update blogpost set Image2='$BlogPostID.2.jpeg' where BlogPostID='$BlogPostID'");
+     $req3->execute();
+     blogpost::uploadFile4($BlogPostID);
+   
+}
+const AllowedTypes4 = ['image/jpeg', 'image/jpg'];
+const InputKey4 = 'myUploader4';
+
+//die() function calls replaced with trigger_error() calls
+//replace with structured exception handling
+public static function uploadFile4(string $BlogPostID) {
+
+	if (empty($_FILES[self::InputKey4])) {
+		//die("File Missing!");
+                trigger_error("File Missing!");
+	}
+
+	if ($_FILES[self::InputKey4]['error'] > 0) {
+		trigger_error("Handle the error! " . $_FILES[InputKey]['error']);
+	}
+
+
+	if (!in_array($_FILES[self::InputKey4]['type'], self::AllowedTypes4)) {
+		trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey4]['type']);
+	}
+//str_replace("/","-",$DatePublished,$i);
+	$tempFile = $_FILES[self::InputKey4]['tmp_name'];
+        $path = dirname(__DIR__) . "/views/blogposts/";
+	$destinationFile = $path . $BlogPostID. '.3.jpeg';
+        //$destinationFile = $path . $_FILES[self::InputKey][$Title];
+	if (!move_uploaded_file($tempFile, $destinationFile)) {
+		trigger_error("Handle Error");
+	}
+		
+	//Clean up the temp file
+	if (file_exists($tempFile)) {
+		unlink($tempFile); 
+	}
+        $db = Db::getInstance();
+     $req3 = $db->query("Update blogpost set Image1='$BlogPostID.3.jpeg' where BlogPostID='$BlogPostID'");
+     $req3->execute();
 }
     
+
 public static function remove($BlogPostID) {
       $db = Db::getInstance();
       //make sure $id is an integer
