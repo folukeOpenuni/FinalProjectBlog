@@ -100,7 +100,7 @@ if($blogpost){
             $name=$_POST['name'];
         }
       }
-      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3, keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
@@ -109,9 +109,9 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-where blogpost.Title like '%".$name."%' OR country.Country like '%".$name."%'OR continent.Continent like '%".$name."%'OR blogpostkeyword.Keyword like '%".$name."%'");
+where blogpost.Title like '%".$name."%' OR blogpost.DatePublished like '%".$name."%' OR country.Country like '%".$name."%'OR continent.Continent like '%".$name."%'OR keyword.Keyword like '%".$name."%' OR personaldata.FirstName like '%".$name."%' OR personaldata.LastName like '%".$name."%'");
      foreach($req->fetchAll() as $blogpost) {
- $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
 
 }
    return $list;
