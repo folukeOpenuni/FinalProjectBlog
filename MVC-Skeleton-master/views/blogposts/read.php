@@ -34,7 +34,7 @@
 ?></p>
 
 <div class="jumbotron">
-<p><?php echo $blogpost->Content; ?></p>
+<p><?php echo $blogpost->ContentP1; ?></p>
 
 <H2><i>"I don't trust words, I trust pictures"</i> - Gilles Peress</H2>
 <p>Take a look for yourself through the eyes of a lens...</p>
@@ -69,6 +69,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div class="jumbotron">
+<p><?php echo $blogpost->ContentP1; ?></p>
 <!--echo $img;
 }
 else

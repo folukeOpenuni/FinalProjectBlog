@@ -30,7 +30,7 @@
     $this->WriterID = $WriterID;
     $this->ContentP1 = $ContentP1;
      $this->ContentP2 = $ContentP2;
-    $this->HeaderImage = $Image;
+    $this->Image = $Image;
     $this->Image1 = $Image1;
     $this->Image2 = $Image2;
     $this->Image3 = $Image3;
@@ -67,7 +67,7 @@ foreach($req->fetchAll() as $blogpost) {
       $db = Db::getInstance();
       //use intval to make sure $id is an integer
       $BlogPostID = intval($BlogPostID);
-        $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.HeaderImage, blogpost.Image1, blogpost.Image2,blogpost.Image3,blogpost.Image4,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+        $req = $db->prepare('Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
 From blogpost
 inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
 inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
