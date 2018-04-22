@@ -13,7 +13,7 @@ Class userController {
              
           //  $users = User::all(); //$wants readAll - why?
             //require_once('views/user/create.php');
-            echo 'Congratulations and welcome to the Gap Yah Community';
+            echo '<p class="left-pad">Congratulations and welcome to the Gap Yah Community!</p>';
       }
     }
     
@@ -28,10 +28,10 @@ Class userController {
       else { 
             User::authenticate();
             if (!empty($_SESSION)){
-              echo 'Succesfully logged in';
+              echo '<p class="left-pad">Succesfully logged in!</p>';
             }
  else {
-     echo 'Failed to login';
+     echo '<p class="left-pad"> Oh no! You have failed to login. Please try again.</p>';
  }
           //  $users = User::all(); //$wants readAll - why?
             //require_once('views/user/create.php');

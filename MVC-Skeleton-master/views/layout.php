@@ -103,6 +103,17 @@ header("Content-Type: text/html; charset=ISO-8859-1");?>
     </form>
   </div>
 </nav>      
+<!--SESSION BAR
+    <div id="guestBox" class="text-right"> 
+        <?php          
+//            if(!empty($_SESSION)){
+//                echo "Hey there" . $_SESSION['Email'];
+//            }   
+//            if (empty($_SESSION)){
+//              echo "Hey future Gap Yah Plannah";
+//            }
+        ?>
+    </div> -->
 
     <?php require_once('routes.php'); ?>
 
