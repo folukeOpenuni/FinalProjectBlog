@@ -5,7 +5,7 @@
         </div>
 </section>
 <div class="left-pad bottom-pad">
-<form action="" method="post" autocomplete="on" enctype="multipart/form-data">
+<form action="" id="signupForm" method="post" autocomplete="on" enctype="multipart/form-data">
     <br>
     <p>Gap Yah Ltd Membership is, and always will be, completely free.</p>
 
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="lastName">Last Name</label>
-            <input type="name" class="form-control" id="LastName" name="LastName" required>
+            <input type="name" class="form-control" id="LastName" name="LastName" required onkeyup="validate()">
         </div>
         <div class="form-group col-md-6">
             <label for="DOB">Date of Birth</label>
@@ -33,14 +33,15 @@
 <!--PASSWORD -->
         <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="Password">Password</label>
-            <input type="password" class="form-control" id="name" name="Password">
+            <label for="Password1">Password</label>
+            <input type="password" class="form-control" id="Password1" name="Password1">
         </div>
         <div class="form-group col-md-6">
-            <label for="Password">Confirm Password</label>
-            <input type="password" class="form-control" id="name" name="Password2">
+            <label for="Password2">Confirm Password</label>
+            <input type="password" class="form-control" id="Password2" name="Password2">
         </div>
         </div>
+
 <!-- COUNTRY OF ORIGIN-->
        <label for="CountryID">Country of origin</label><br>
   <select name="CountryID">

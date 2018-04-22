@@ -15,16 +15,15 @@ header("Content-Type: text/html; charset=ISO-8859-1");?>
     <link href="views/css/styles.css" rel="stylesheet" type="text/css"/>
 <!--GOOGLE FONT-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps">
-    
-        <script>
-        
-function showCountry(str) {
+
+<!--<script src="formValidator.js" type="text/javascript"></script>-->
+<script>
+function getBudgetJS(str) {
     //document.getElementById("txtHint").innerHTML = "test";
     if (str == "") {
         document.getElementById("txtHint").innerHTML = "";
         return;
     } else { 
-        //document.getElementById("txtHint").innerHTML = "test";
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -33,17 +32,21 @@ function showCountry(str) {
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         xmlhttp.onreadystatechange = function() {
-            //if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("txtHint").innerHTML = this.responseText;
-            //}
+                //document.getElementById("txtHint").innerHTML = "test";
+            }
         };
-
-        xmlhttp.open("GET","index.php?controller=AJAXDatabase&action=getBudget"+str,true);//"+str,true);
+        //xmlhttp.open("GET","./controllers/ajax_controller.php?action=getBudget1",true);
+        xmlhttp.open("GET","ajax.php?controller=ajax&action=getBudget&countryID="+str,true);
+        //xmlhttp.open("GET","views/ajax/getBudget.php",true);
+        //document.getElementById("txtHint").innerHTML = "test";
         xmlhttp.send();
+
     }
 }
 </script>
-    
+        
     
     </head>
     

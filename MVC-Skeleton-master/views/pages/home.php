@@ -28,8 +28,23 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>        
+</div>   
+<!--getBudgetthing-->
 
+<div>
+<h3>Budget Plannah! Choose Country: </h3>
+<form>
+<select id="mySelect2" name="country" onchange="getBudgetJS(this.value)">
+  <option value="">Select a country:</option>
+  <option value="21">Bolivia</option>
+  <option value="22">Bosnia and Herzegovina</option>
+  <option value="23">Botswana</option>
+  <option value="24">Brazil</option>
+  </select>
+</form>
+<br>
+<div id="txtHint"><b>Expect Budget Plannah here...</b></div>
+</div>
 <!--3 IMAGE SECTION-->
         <section class="container-fluid">
             <h2 class="text-center">April's top 3 destinations</h2>

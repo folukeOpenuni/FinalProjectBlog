@@ -100,8 +100,8 @@
         $filteredDOB = filter_input(INPUT_POST,'DOB', FILTER_SANITIZE_SPECIAL_CHARS);
     }
     
-    if(isset($_POST['Password'])&& $_POST['Password']!=""){
-        $filteredPassword = filter_input(INPUT_POST,'Password', FILTER_SANITIZE_SPECIAL_CHARS);
+    if(isset($_POST['Password1'])&& $_POST['Password1']!=""){
+        $filteredPassword = filter_input(INPUT_POST,'Password1', FILTER_SANITIZE_SPECIAL_CHARS);
     }
     
        if(isset($_POST['CountryID'])&& $_POST['CountryID']!=""){

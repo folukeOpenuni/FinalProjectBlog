@@ -28,7 +28,7 @@
 
                     'blogpost' => ['readAll','read','create','find','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica'],
                     'user' => ['create', 'authenticate'],
-        'AJAXDatabase' =>['getBudget'],
+                    'ajax' =>['getBudget'],
  
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
