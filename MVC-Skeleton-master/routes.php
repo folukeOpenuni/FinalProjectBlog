@@ -26,10 +26,9 @@
 // Add an entry for each new controller and its actions
     $controllers = array('pages' => ['home', 'about', 'error'],
 
-                    'blogpost' => ['readAll','read','create','find','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica', 'Andreas','John','Penny','Kiera' ],
-                    'user' => ['create', 'authenticate', 'getwriterdetails'],
-                    'ajax' =>['getBudget'],
- 
+                    'blogpost' => ['readAll','read','create','find','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica'],
+                    'user' => ['create', 'authenticate'],
+#                    'ajax' =>['getBudget'],
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
 
