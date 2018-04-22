@@ -100,6 +100,17 @@
     </form>
   </div>
 </nav>      
+<!--SESSION BAR-->
+    <div id="guestBox" class="text-right"> 
+        <?php          
+            if(!empty($_SESSION)){
+                echo "Hey there" . $_SESSION['email'];
+            }   
+            if (empty($_SESSION)){
+              echo "Hey future Gap Yah Plannah";
+            }
+        ?>
+    </div> 
 
     <?php require_once('routes.php'); ?>
 
