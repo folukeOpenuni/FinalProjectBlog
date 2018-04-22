@@ -290,8 +290,127 @@ public static function uploadFile(string $BlogPostID) {
         $db = Db::getInstance();
      $req2 = $db->query("Update blogpost set Image='$BlogPostID.jpeg' where BlogPostID='$BlogPostID'");
      $req2->execute();
+     blogpost::uploadFile2($BlogPostID);
+   }
+
+const AllowedTypes2 = ['image/jpeg', 'image/jpg'];
+const InputKey2 = 'myUploader2';
+
+//die() function calls replaced with trigger_error() calls
+//replace with structured exception handling
+public static function uploadFile2(string $BlogPostID) {
+
+	if (empty($_FILES[self::InputKey2])) {
+		//die("File Missing!");
+                trigger_error("File Missing!");
+	}
+
+	if ($_FILES[self::InputKey2]['error'] > 0) {
+		trigger_error("Handle the error! " . $_FILES[InputKey]['error']);
+	}
+
+
+	if (!in_array($_FILES[self::InputKey2]['type'], self::AllowedTypes2)) {
+		trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey2]['type']);
+	}
+//str_replace("/","-",$DatePublished,$i);
+	$tempFile = $_FILES[self::InputKey2]['tmp_name'];
+        $path = dirname(__DIR__) . "/views/blogposts/";
+	$destinationFile = $path . $BlogPostID. '.1.jpeg';
+        //$destinationFile = $path . $_FILES[self::InputKey][$Title];
+	if (!move_uploaded_file($tempFile, $destinationFile)) {
+		trigger_error("Handle Error");
+	}
+		
+	//Clean up the temp file
+	if (file_exists($tempFile)) {
+		unlink($tempFile); 
+	}
+        $db = Db::getInstance();
+     $req3 = $db->query("Update blogpost set Image1='$BlogPostID.1.jpeg' where BlogPostID='$BlogPostID'");
+     $req3->execute();
+     
+     blogpost::uploadFile3($BlogPostID);
+   }
+
+const AllowedTypes3 = ['image/jpeg', 'image/jpg'];
+const InputKey3 = 'myUploader3';
+
+//die() function calls replaced with trigger_error() calls
+//replace with structured exception handling
+public static function uploadFile3(string $BlogPostID) {
+
+	if (empty($_FILES[self::InputKey3])) {
+		//die("File Missing!");
+                trigger_error("File Missing!");
+	}
+
+	if ($_FILES[self::InputKey3]['error'] > 0) {
+		trigger_error("Handle the error! " . $_FILES[InputKey]['error']);
+	}
+
+
+	if (!in_array($_FILES[self::InputKey3]['type'], self::AllowedTypes3)) {
+		trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey3]['type']);
+	}
+//str_replace("/","-",$DatePublished,$i);
+	$tempFile = $_FILES[self::InputKey3]['tmp_name'];
+        $path = dirname(__DIR__) . "/views/blogposts/";
+	$destinationFile = $path . $BlogPostID. '.2.jpeg';
+        //$destinationFile = $path . $_FILES[self::InputKey][$Title];
+	if (!move_uploaded_file($tempFile, $destinationFile)) {
+		trigger_error("Handle Error");
+	}
+		
+	//Clean up the temp file
+	if (file_exists($tempFile)) {
+		unlink($tempFile); 
+	}
+        $db = Db::getInstance();
+     $req3 = $db->query("Update blogpost set Image2='$BlogPostID.2.jpeg' where BlogPostID='$BlogPostID'");
+     $req3->execute();
+     blogpost::uploadFile4($BlogPostID);
+   
+}
+const AllowedTypes4 = ['image/jpeg', 'image/jpg'];
+const InputKey4 = 'myUploader4';
+
+//die() function calls replaced with trigger_error() calls
+//replace with structured exception handling
+public static function uploadFile4(string $BlogPostID) {
+
+	if (empty($_FILES[self::InputKey4])) {
+		//die("File Missing!");
+                trigger_error("File Missing!");
+	}
+
+	if ($_FILES[self::InputKey4]['error'] > 0) {
+		trigger_error("Handle the error! " . $_FILES[InputKey]['error']);
+	}
+
+
+	if (!in_array($_FILES[self::InputKey4]['type'], self::AllowedTypes4)) {
+		trigger_error("Handle File Type Not Allowed: " . $_FILES[self::InputKey4]['type']);
+	}
+//str_replace("/","-",$DatePublished,$i);
+	$tempFile = $_FILES[self::InputKey4]['tmp_name'];
+        $path = dirname(__DIR__) . "/views/blogposts/";
+	$destinationFile = $path . $BlogPostID. '.3.jpeg';
+        //$destinationFile = $path . $_FILES[self::InputKey][$Title];
+	if (!move_uploaded_file($tempFile, $destinationFile)) {
+		trigger_error("Handle Error");
+	}
+		
+	//Clean up the temp file
+	if (file_exists($tempFile)) {
+		unlink($tempFile); 
+	}
+        $db = Db::getInstance();
+     $req3 = $db->query("Update blogpost set Image1='$BlogPostID.3.jpeg' where BlogPostID='$BlogPostID'");
+     $req3->execute();
 }
     
+
 public static function remove($BlogPostID) {
       $db = Db::getInstance();
       //make sure $id is an integer
