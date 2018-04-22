@@ -120,6 +120,38 @@ class blogpostController {
 
       require_once('views/pages/SearchResults.php');
       }
+        public function andreas() {
+          //$name = $_GET['name'];
+          
+ 
+        $blogposts = blogpost::andreas();
+
+      require_once('views/pages/SearchResults.php');
+      }
+         public function john() {
+          //$name = $_GET['name'];
+          
+ 
+        $blogposts = blogpost::john();
+
+      require_once('views/pages/SearchResults.php');
+      }
+         public function penny() {
+          //$name = $_GET['name'];
+          
+ 
+        $blogposts = blogpost::penny();
+
+      require_once('views/pages/SearchResults.php');
+      }
+         public function kiera() {
+          //$name = $_GET['name'];
+          
+ 
+        $blogposts = blogpost::kiera();
+
+      require_once('views/pages/SearchResults.php');
+      }
  
  }
       

@@ -38,4 +38,9 @@ Class userController {
             
       }
     }
+    
+    public function getwriterdetails(){
+        $writers = writer::getwriterdetails();
+        require_once('views/user/about.php');
+    }
 }

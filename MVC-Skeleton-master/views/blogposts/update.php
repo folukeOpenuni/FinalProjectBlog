@@ -271,8 +271,27 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
 
 ?>
 </p>
-  <br/>
-  <input type="file" name="myUploader" class="w3-btn w3-pink" />
+  <!--IMAGE UPLOADS-->
+<div class="form-group col-md-12">
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+    <p>Upload 1 featured image:</p> <input type="file" name="myUploader"/>
+    <br>
+    <br>
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+    <p>Upload secondary image 1:</p> <input id="myUploader1" type="file" name="myUploader1"/>
+    <br>
+    <br>
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+    <p>Upload secondary image 2:</p> <input id="myUploader2" type="file" name="myUploader2"/>
+    <br>
+    <br>
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+    <p>Upload secondary image 3:</p> <input id="myUploader3" type="file" name="myUploader3"/>
+    <br>
+    <br>
+    <br>
+    <input class="btn btn-secondary" type="submit" value="submit">
+</div>
   <p>
       <button onclick="document.getElementById('id01').style.display='block'" class='w3-btn w3-gray' type='submit' value='Update blogpost'>Update</button>
   </p>

@@ -36,7 +36,7 @@ header("Content-Type: text/html; charset=ISO-8859-1");?>
         </li>
         <li class="nav-item">
 
-          <a class="nav-link" href='?controller=pages&action=about'>About</a>
+          <a class="nav-link" href='?controller=user&action=getwriterdetails'>About</a>
 
         </li>
         <li class="nav-item dropdown">

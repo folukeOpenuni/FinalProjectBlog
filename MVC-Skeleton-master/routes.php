@@ -26,8 +26,8 @@
 // Add an entry for each new controller and its actions
     $controllers = array('pages' => ['home', 'about', 'error'],
 
-                    'blogpost' => ['readAll','read','create','find','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica'],
-                    'user' => ['create', 'authenticate'],
+                    'blogpost' => ['readAll','read','create','find','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica', 'Andreas','John','Penny','Kiera' ],
+                    'user' => ['create', 'authenticate', 'getwriterdetails'],
  
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
