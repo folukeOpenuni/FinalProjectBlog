@@ -9,7 +9,7 @@
 </style>
 
 <div class="text-white text-overlay blog-img">
-  <img class="img-fulid blog-img" src="views/images/<?php echo $blogpost->HeaderImage; ?>">
+  <img class="img-fulid blog-img" src="views/images/<?php echo $blogpost->Image; ?>">
     <h1 class="text-centered"><?php echo $blogpost->Title; ?></h1>
     <p class="text-subhead">Date Published: <?php echo $blogpost->DatePublished; ?></p>
 </div>
@@ -17,23 +17,64 @@
 <br>
 <center>
 
-    <img src="views/images/profilepicture/<?php echo $blogpost->WriterFName;?>.jpeg" alt="Avatar" class="avatar">
+    <img src="views/images/profilepicture/<?php echo $blogpost->WriterID;?>.jpg" alt="Avatar" class="avatar">
     <br>
     <br>
-    <p>Written by <?php echo $blogpost->WriterFName;
+    <p>Written by <?php 
+    if ($blogpost->WriterID == 1){
+        echo "John Murray";
+    } elseif ($blogpost->WriterID == 2) {
+        echo "Andrea Orset";
+    }elseif ($blogpost->WriterID == 3){
+        echo "Penny Yiota";
+    } else{
+        echo "Keira Kenny";
+    }
     
 ?></p>
 
-
-<!--<p>Product BlogPostID: <?php //echo $blogpost->BlogPostID; ?></p>-->
 <div class="jumbotron">
-<p><?php echo $blogpost->ContentP1; ?></p>
+<p><?php echo $blogpost->Content; ?></p>
+
+<H2><i>"I don't trust words, I trust pictures"</i> - Gilles Peress</H2>
+<p>Take a look for yourself through the eyes of a lens...</p>
+
+<?php 
+//$file = 'views/images/' . $blogpost->Image1;
+//if(file_exists($file)){ ?>
+<!--IMAGE CAROUSEL-->
+<div id="blogpostimages" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#blogpostimages" data-slide-to="0" class="active"></li>
+    <li data-target="#blogpostimages" data-slide-to="1"></li>
+    <li data-target="#blogpostimages" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="views/images/<?php echo $blogpost->Image1; ?>">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="views/images/<?php echo $blogpost->Image2; ?>">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="views/images/<?php echo $blogpost->Image3; ?>">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-    
-    <!--PLACEHOLDER FOR CAROSELL-->
-   <div class="jumbotron">
-<p><?php echo $blogpost->ContentP2; ?></p>
-</div> 
-
-
-</center>	
+<!--echo $img;
+}
+else
+{
+echo "<img src='views/images/standard/noimage.jpg' width='auto' />";
+}
+?>-->
+</div>
+</center>
