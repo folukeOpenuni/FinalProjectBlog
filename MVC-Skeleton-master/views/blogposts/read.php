@@ -9,7 +9,7 @@
 </style>
 
 <div class="text-white text-overlay blog-img">
-  <img class="img-fulid blog-img" src="views/images/blogposts/<?php echo $blogpost->Image; ?>">
+  <img class="img-fulid blog-img" src="views/images/<?php echo $blogpost->Image; ?>">
     <h1 class="text-centered"><?php echo $blogpost->Title; ?></h1>
     <p class="text-subhead">Date Published: <?php echo $blogpost->DatePublished; ?></p>
 </div>
@@ -17,10 +17,21 @@
 <br>
 <center>
 
-    <img src="views/images/profilepicture/<?php echo $blogpost->WriterFName;?>.jpeg" alt="Avatar" class="avatar">
+    <img src="views/images/profilepicture/<?php echo $blogpost->WriterID;?>.jpg" alt="Avatar" class="avatar">
     <br>
     <br>
-    <p>Written by <?php echo $blogpost->WriterFName;?></p>
+    <p>Written by <?php 
+    if ($blogpost->WriterID == 1){
+        echo "John Murray";
+    } elseif ($blogpost->WriterID == 2) {
+        echo "Andrea Orset";
+    }elseif ($blogpost->WriterID == 3){
+        echo "Penny Yiota";
+    } else{
+        echo "Keira Kenny";
+    }
+    
+?></p>
 
 <div class="jumbotron">
 <p><?php echo $blogpost->ContentP1; ?></p>
@@ -40,13 +51,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="views/images/blogposts/<?php echo $blogpost->Image1; ?>">
+      <img class="d-block w-100" src="views/images/<?php echo $blogpost->Image1; ?>">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="views/images/blogposts/<?php echo $blogpost->Image2; ?>">
+      <img class="d-block w-100" src="views/images/<?php echo $blogpost->Image2; ?>">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="views/images/blogposts/<?php echo $blogpost->Image3; ?>">
+      <img class="d-block w-100" src="views/images/<?php echo $blogpost->Image3; ?>">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

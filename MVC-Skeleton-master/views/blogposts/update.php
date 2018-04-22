@@ -10,7 +10,7 @@
     
         <div class="form-group col-md-12">
             <label>Date Published</label><br>
-            <input class="w3-input" type="datetime-local" name="DatePublished" Placeholder= "YYYY-MM-DD" value="<?= $blogpost->DatePublished; ?>"required>
+        <input class="w3-input" type="date" name="DatePublished" Placeholder= "YYYY-MM-DD" value="<?= $blogpost->DatePublished; ?>">
         </div>
     
         <div class="form-group col-md-12">
@@ -258,9 +258,8 @@
 </div>
             
  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
- <div>
 <?php 
-$file = 'views/images/blogposts/' . $blogpost->BlogPostID . '.jpeg';
+$file = 'views/images/' . $blogpost->Title . '.jpeg';
 if(file_exists($file)){
     $img = "<img src='$file' width='150' />";
     echo $img;
@@ -271,37 +270,17 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
 }
 
 ?>
- </div>
 </p>
-  <!--IMAGE UPLOADS-->
-<div class="form-group col-md-12">
-    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-    <p>Upload 1 featured image:</p> <input type="file" name="myUploader"/>
-    <br>
-    <br>
-    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
-    <p>Upload secondary image 1:</p> <input id="myUploader1" type="file" name="myUploader1"/>
-    <br>
-    <br>
-    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
-    <p>Upload secondary image 2:</p> <input id="myUploader2" type="file" name="myUploader2"/>
-    <br>
-    <br>
-    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
-    <p>Upload secondary image 3:</p> <input id="myUploader3" type="file" name="myUploader3"/>
-    <br>
-    <br>
-    <br>
-    <!--<input class="btn btn-secondary" type="submit" value="submit">-->
-</div>
+  <br/>
+  <input type="file" name="myUploader" class="w3-btn w3-pink" />
   <p>
       <button onclick="document.getElementById('id01').style.display='block'" class='w3-btn w3-gray' type='submit' value='Update blogpost'>Update</button>
   </p>
-  <!--<div id="id01" class="w3-modal">
+  <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p>Your post has been updated!</p>-->
+        <p>Your post has been updated!</p>
       </div>
     </div>
   </div>

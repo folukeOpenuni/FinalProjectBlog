@@ -97,27 +97,21 @@
 <!--3 Meet the team-->
 <center>
     <div class="container-fluid">
-        
 <div class="row" >
-    <?php foreach($writers as $writer) { ?>
   <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
-      <img src="views/images/profilepicture/<?php echo $writer->FirstName;?>.jpeg" alt="<?php echo $writer->FirstName;?> " style="width:100%;height:200px">
+      <img src="views/images/profilepicture/john.jpg" alt="John" style="width:100%;height:200px">
       <div class="container">
-        <h3><?php echo $writer->FirstName;?> <?php echo $writer->LastName;?></h3>
+        <h3>John Murray</h3>
         <p class="title">Writer</p>
-        <p><?php echo $writer->bio;?></p>
-        <p><a href="mailto:<?php echo $writer->Email;?>"><?php echo $writer->Email;?></a></p>
-        <!--Writer Search-->
-        <form class="form-inline my-2 my-lg-0" action="?controller=blogpost&action=<?php echo $writer->FirstName;?>" method="post" name="<?php echo $writer->FirstName;?>" >
-      <!--<input class="form-control mr-sm-2" type="search" placeholder="Search blog posts"aria-label="Search" name="name">-->
-      <!--<button class="btn btn-outline-info my-2 my-sm-0" type="submit" value = "search">Search</button>-->
-        <p><button class="button" type="submit" value = "search">See My Posts</button></p>
+        <p>Placeholder: Link to bio in database</p>
+        <p><a href="mailto:john@gapyahblog.com">john@gapyahblog.com</a></p>
+        <p><button class="button">See My Posts</button></p>
       </div>
     </div>
   </div>
-        <?php }; ?>
-  <!--<div class="col-sm-12 col-md-6 col-lg-3">
+
+  <div class="col-sm-12 col-md-6 col-lg-3">
     <div class="card">
       <img src="views/images/profilepicture/andreas.jpeg" alt="Andreas" style="width:100%;height:200px">
       <div class="container">
@@ -152,7 +146,7 @@
         <p><a href="mailto:kiera@gapyahblog.com">kiera@gapyahblog.com</a></p>
         <p><button class="button">See My Posts</button></p>
       </div>
-    </div>-->
+    </div>
   </div>
 </div>
     </div>
