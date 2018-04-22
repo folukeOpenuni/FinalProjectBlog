@@ -1,10 +1,14 @@
-
+<section>
+        <div class="text-white text-overlay">
+            <img class="img-fluid" src="views/images/jumpingfriends.jpg" alt="crowd of friends at sunset">
+            <h1 class="text-centered">Join the Gap Yah Community!</h1>
+        </div>
+</section>
+<div class="left-pad bottom-pad">
 <form action="" method="post" autocomplete="on" enctype="multipart/form-data">
-            <div class="container">
-            <h1>Join the Gap Yah Community!</h1>
-            <p>Gap Yah Ltd Membership is, and always will be, completely free.</p>
-         
- 
+    <br>
+    <p>Gap Yah Ltd Membership is, and always will be, completely free.</p>
+
         <div class="form-row">
         <div class="form-group col-md-6">
             <label for="firstname">First Name</label>
@@ -26,7 +30,7 @@
         
         
             
-        <!--Password -->
+<!--PASSWORD -->
         <div class="form-row">
         <div class="form-group col-md-6">
             <label for="Password">Password</label>
@@ -37,9 +41,9 @@
             <input type="password" class="form-control" id="name" name="Password2">
         </div>
         </div>
-       
-       <br/> 
-            <select name="CountryID">
+<!-- COUNTRY OF ORIGIN-->
+       <label for="CountryID">Country of origin</label><br>
+  <select name="CountryID">
   <option value="1">Afghanistan</option>
   <option value="2">Albania</option>
   <option value="3">Andorra</option>
@@ -236,7 +240,7 @@
     <option value="192">Uganda</option>
     <option value="193">Ukraine</option>
     <option value="194">United Arab Emirates</option>
-    <option value="195">United Kingdom</option>
+    <option selected="selected" value="195">United Kingdom</option>
     <option value="196">Uruguay</option>
      <option value="197">Uzbekistan</option>
     <option value="198">Vanuatu</option>
@@ -258,15 +262,9 @@
 
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
             
-           
-        
-     
-        
-            <button type="submit" class="signupbtn" >Sign Up</button>
-            <button type="button" class="cancelbtn">Cancel</button>
+         
+            <button type="submit" class="signupbtn btn btn-secondary" >Sign Up</button>
+            <button type="button" class="cancelbtn btn btn-light">Cancel</button>
              
             <br>
-
-
-
 </div>
