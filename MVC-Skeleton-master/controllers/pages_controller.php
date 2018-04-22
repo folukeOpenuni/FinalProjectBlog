@@ -17,9 +17,9 @@ class PagesController {
       require_once('views/pages/error.php');
     }
     
-    public function getBudget() {
-        echo "test 3";
-        require_once('views/pages/getBudget.php');
+#    public function getBudget() {
+#        echo "test 3";
+#        require_once('views/pages/getBudget.php');
       
-    }
+#    }
 }
