@@ -10,7 +10,7 @@
     
         <div class="form-group col-md-12">
             <label>Date Published</label><br>
-            <input class="w3-input" type="datetime-local" name="DatePublished" Placeholder= "YYYY-MM-DD" value="<?= $blogpost->DatePublished; ?>">
+            <input class="w3-input" type="datetime-local" name="DatePublished" Placeholder= "YYYY-MM-DD" value="<?= $blogpost->DatePublished; ?>"required>
         </div>
     
         <div class="form-group col-md-12">
@@ -258,8 +258,9 @@
 </div>
             
  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+ <div>
 <?php 
-$file = 'views/images/' . $blogpost->Title . '.jpeg';
+$file = 'views/images/blogposts/' . $blogpost->BlogPostID . '.jpeg';
 if(file_exists($file)){
     $img = "<img src='$file' width='150' />";
     echo $img;
@@ -270,6 +271,7 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
 }
 
 ?>
+ </div>
 </p>
   <!--IMAGE UPLOADS-->
 <div class="form-group col-md-12">
@@ -290,16 +292,16 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
     <br>
     <br>
     <br>
-    <input class="btn btn-secondary" type="submit" value="submit">
+    <!--<input class="btn btn-secondary" type="submit" value="submit">-->
 </div>
   <p>
       <button onclick="document.getElementById('id01').style.display='block'" class='w3-btn w3-gray' type='submit' value='Update blogpost'>Update</button>
   </p>
-  <div id="id01" class="w3-modal">
+  <!--<div id="id01" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p>Your post has been updated!</p>
+        <p>Your post has been updated!</p>-->
       </div>
     </div>
   </div>
