@@ -12,7 +12,7 @@
         <div class="form-row">
         <div class="form-group col-md-6">
             <label for="firstname">First Name</label>
-            <input type="name" class="form-control" id="FirstName" name="FirstName" autofocus required>
+            <input type="name" class="form-control" id="FirstName" name="FirstName" required>
         </div>
         <div class="form-group col-md-6">
             <label for="lastName">Last Name</label>
