@@ -17,21 +17,10 @@
 <br>
 <center>
 
-    <img src="views/images/profilepicture/<?php echo $blogpost->WriterID;?>.jpg" alt="Avatar" class="avatar">
+    <img src="views/images/profilepicture/<?php echo $blogpost->WriterFName;?>.jpeg" alt="Avatar" class="avatar">
     <br>
     <br>
-    <p>Written by <?php 
-    if ($blogpost->WriterID == 1){
-        echo "John Murray";
-    } elseif ($blogpost->WriterID == 2) {
-        echo "Andrea Orset";
-    }elseif ($blogpost->WriterID == 3){
-        echo "Penny Yiota";
-    } else{
-        echo "Keira Kenny";
-    }
-    
-?></p>
+    <p>Written by <?php echo $blogpost->WriterFName;?></p>
 
 <div class="jumbotron">
 <p><?php echo $blogpost->ContentP1; ?></p>
