@@ -30,7 +30,9 @@ class blogpostController {
           require_once('views/blogposts/create.php');
       }
       else { 
-            blogpost::add();
+            
+            $BlogPostID = blogpost::add();;
+            blogpost::addkeywordcountry($BlogPostID);
            // blogpost::addkeywordcountry($list);
             $blogposts = blogpost::all(); //$products is used within the view
             require_once('views/blogposts/readAll.php');
