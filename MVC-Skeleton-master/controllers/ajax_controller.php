@@ -7,4 +7,4 @@ class ajaxController {
        $ajaxs = ajax::getBudget($countryID);
         require_once('views/ajax/getBudget.php');
    }
-}
+

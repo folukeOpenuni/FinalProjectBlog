@@ -5,19 +5,19 @@
     <p>
         <div class="form-group col-md-12">
             <label>Title</label><br>
-        <input class="w3-input" type="text" name="Title" >
+        <input class="w3-input" type="text" name="Title" required>
         </div>
     </p>
     <p> 
         <div class="form-group col-md-12">
             <label>Date Published</label><br>
-        <input class="w3-input" type="text" name="DatePublished" Placeholder= "YYYY-MM-DD" >
+            <input class="w3-input" type="datetime-local" name="DatePublished" Placeholder= "YYYY-MM-DD" required>
         </div>
     </p>
     <p>
         <div class="form-group col-md-12">
   <label for="WriterID">Writer</label>
-  <select class="form-control" id="WriterID" name="WriterID">
+  <select class="form-control" id="WriterID" name="WriterID" required>
     <option value="1">John Murray</option>
     <option value="2">Andrea Orset</option>
     <option value="3">Penny Yiota</option>
@@ -29,18 +29,18 @@
     <p>
         <div class="form-group col-lg-12">
             <label>Paragraph 1</label><br>
-        <input class="w3-input" type="text" name="ContentP1" rows='5'>
+        <input class="w3-input" type="text" name="ContentP1" rows='5' required>
         </div>
     </p>
     <p>
         <div class="form-group col-lg-12">
             <label>Paragraph 2</label><br>
-        <input class="w3-input" type="text" name="ContentP2" rows='5'>
+        <input class="w3-input" type="text" name="ContentP2" rows='5' required>
         </div>
     </p>
     <div class="form-group col-md-12">
   <label for="KeywordID">Keyword</label>
-  <select class="form-control" id="KeywordID" name="KeywordID">
+  <select class="form-control" id="KeywordID" name="KeywordID" required>
     <option value="1">Beech</option>
     <option value="2">Cuisine</option>
     <option value="3">Lesser Known</option>
@@ -52,7 +52,7 @@
         </div>
     <div class="form-group col-md-12">
   <label for="CountryID">Country</label>
-    <select class="form-control" id="CountryID" name='CountryID'>
+    <select class="form-control" id="CountryID" name='CountryID' required>
     <option value="1">Afghanistan</option>
     <option value="2">Albania</option>
     <option value="3">Algeria</option>
@@ -262,19 +262,19 @@
 <!--IMAGE UPLOADS-->
 <div class="form-group col-md-12">
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-    <p>Upload 1 featured image:</p> <input type="file" name="myUploader"/>
+    <p>Upload 1 featured image:</p> <input type="file" name="myUploader" required/>
     <br>
     <br>
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
-    <p>Upload secondary image 1:</p> <input id="myUploader1" type="file" name="myUploader1"/>
+    <p>Upload secondary image 1:</p> <input id="myUploader1" type="file" name="myUploader1" required/>
     <br>
     <br>
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
-    <p>Upload secondary image 2:</p> <input id="myUploader2" type="file" name="myUploader2"/>
+    <p>Upload secondary image 2:</p> <input id="myUploader2" type="file" name="myUploader2"required/>
     <br>
     <br>
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
-    <p>Upload secondary image 3:</p> <input id="myUploader3" type="file" name="myUploader3"/>
+    <p>Upload secondary image 3:</p> <input id="myUploader3" type="file" name="myUploader3"required/>
     <br>
     <br>
     <br>

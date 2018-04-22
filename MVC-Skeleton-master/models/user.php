@@ -13,7 +13,7 @@
 
 
 
-    public function __construct($PersonalDataID, $FirstName,  $LastName, $Email, $DOB, $CountryID, $Password, $Image){
+    public function __construct($PersonalDataID, $FirstName,  $LastName, $Email, $DOB, $Password, $CountryID){
 
             //$country, $keyword, $continent, $comment) {
      
@@ -116,6 +116,48 @@ $Password = $filteredPassword;
 $CountryID = $filteredCountryID;
 
  $req->execute();
+        }
+  }
+  Class writer extends User{
+        
+          public $PersonalDataID;
+    public $FirstName;
+    public $LastName;
+    public $Email;
+    public $DOB;
+    public $Password;
+    public $CountryID;
+    public $bio; 
+             
+            public function __construct($PersonalDataID, $FirstName,  $LastName, $Email, $DOB, $Password, $CountryID, $bio){
+
+            //$country, $keyword, $continent, $comment) {
+     
+    $this->PersonalDataID = $PersonalDataID;
+    $this->FirstName = $FirstName;
+    $this->LastName = $LastName;
+    $this->CountryID = $CountryID;
+    $this->Email = $Email;
+    $this->DOB = $DOB;
+ //   $this->Country = $Country;
+    $this->Password = $Password;
+    $this->CountryID = $CountryID;
+    $this->bio = $bio;
+    }
+        public static function getwriterdetails(){
+            
+              $list = [];
+ $db = Db::getInstance();
+$req = $db->query('Select personaldata.PersonalDataID, personaldata.FirstName,personaldata.LastName, personaldata.Email, personaldata.DOB, personaldata.Password, personaldata.CountryID, writer.bio
+From personaldata
+inner join writer on personaldata.PersonalDataID = writer.PersonalDataID');
+// we create a list of Product objects from the database results
+foreach($req->fetchAll() as $writer) {
+ $list[] = new writer ($writer['PersonalDataID'],$writer['FirstName'],$writer['LastName'],$writer['Email'],$writer['DOB'],$writer['Password'],$writer['CountryID'], $writer['bio']);
+
+}
+   return $list;
+            
         }
   }
   
