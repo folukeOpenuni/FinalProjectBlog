@@ -276,7 +276,7 @@ public static function uploadFile(string $BlogPostID) {
 	}
 //str_replace("/","-",$DatePublished,$i);
 	$tempFile = $_FILES[self::InputKey]['tmp_name'];
-        $path = dirname(__DIR__) . "/images/blogposts/";
+        $path = dirname(__DIR__) . "/views/images/blogposts/";
 	$destinationFile = $path . $BlogPostID. '.jpeg';
         //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
@@ -315,7 +315,7 @@ public static function uploadFile1(string $BlogPostID) {
 	}
 //str_replace("/","-",$DatePublished,$i);
 	$tempFile = $_FILES[self::InputKey1]['tmp_name'];
-        $path = dirname(__DIR__) . "/images/blogposts/";
+        $path = dirname(__DIR__) . "/views/images/blogposts/";
 	$destinationFile = $path . $BlogPostID. '.1.jpeg';
         //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
@@ -355,7 +355,7 @@ public static function uploadFile2(string $BlogPostID) {
 	}
 //str_replace("/","-",$DatePublished,$i);
 	$tempFile = $_FILES[self::InputKey2]['tmp_name'];
-        $path = dirname(__DIR__) . "/images/blogposts/";
+        $path = dirname(__DIR__) . "/views/images/blogposts/";
 	$destinationFile = $path . $BlogPostID. '.2.jpeg';
         //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
@@ -394,7 +394,7 @@ public static function uploadFile3(string $BlogPostID) {
 	}
 //str_replace("/","-",$DatePublished,$i);
 	$tempFile = $_FILES[self::InputKey3]['tmp_name'];
-        $path = dirname(__DIR__) . "/images/blogposts/";
+        $path = dirname(__DIR__) . "/views/images/blogposts/";
 	$destinationFile = $path . $BlogPostID. '.3.jpeg';
         //$destinationFile = $path . $_FILES[self::InputKey][$Title];
 	if (!move_uploaded_file($tempFile, $destinationFile)) {
