@@ -35,10 +35,10 @@
             <h2 class="text-center">April's top 3 destinations</h2>
             <div class="row">   
                 <div class="col-md-4 col-sm-10 container">
-                    <img class="image" src="views/images/norway.jpg" class="img-responsive margin" width="100%" alt="Norwegian landscape"/>
+                    <a href="?controller=blogpost&action=read&BlogPostID=3"<img class="image" src="views/images/norway.jpg" class="img-responsive margin" width="100%" alt="Norwegian landscape"/>
                     <div class="middle">
                     <div class="text">10 Instagrammable places in Norway</div>   
-                    </div>
+                    </div></a>
                 </div>
                 <div class="col-md-4 col-sm-10 container">
                     <img class="image" src="views/images/sanfrancisco.jpg" class="img-responsive rounded" width="100%" alt="Street in Sanfrancisco"/>
