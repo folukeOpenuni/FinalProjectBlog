@@ -28,6 +28,7 @@
 
                     'blogpost' => ['readAll','read','create','find','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica', 'Andreas','John','Penny','Kiera' ],
                     'user' => ['create', 'authenticate', 'getwriterdetails'],
+                    'ajax' =>['getBudget'],
  
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
