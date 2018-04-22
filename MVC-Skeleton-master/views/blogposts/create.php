@@ -283,7 +283,7 @@
     </p>
 </form>
 
-<script>
+<!--<script>
     $(function(){
     $("input[type='submit']").click(function(){
         var $fileUpload = $("input[type='file']");
@@ -293,4 +293,4 @@
         else {$("myUploader").submit(); 
     });    
 )};
-</script>
+</script>-->
