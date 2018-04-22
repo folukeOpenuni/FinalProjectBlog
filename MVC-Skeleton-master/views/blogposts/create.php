@@ -265,9 +265,18 @@
     <p>Upload 1 featured image:</p> <input type="file" name="myUploader"/>
     <br>
     <br>
-    <!--<input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
-    <p>Upload up to 3 secondary images:</p> <input id="myUploader" type="file" name="myUploader" multiple/>
-    <br>-->
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+    <p>Upload secondary image 1:</p> <input id="myUploader1" type="file" name="myUploader1"/>
+    <br>
+    <br>
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+    <p>Upload secondary image 2:</p> <input id="myUploader2" type="file" name="myUploader2"/>
+    <br>
+    <br>
+    <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
+    <p>Upload secondary image 3:</p> <input id="myUploader3" type="file" name="myUploader3"/>
+    <br>
+    <br>
     <br>
     <input class="btn btn-secondary" type="submit" value="submit">
 </div>
