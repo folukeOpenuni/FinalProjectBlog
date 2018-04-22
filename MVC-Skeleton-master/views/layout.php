@@ -15,6 +15,36 @@ header("Content-Type: text/html; charset=ISO-8859-1");?>
     <link href="views/css/styles.css" rel="stylesheet" type="text/css"/>
 <!--GOOGLE FONT-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps">
+    
+        <script>
+        
+function showCountry(str) {
+    //document.getElementById("txtHint").innerHTML = "test";
+    if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else { 
+        //document.getElementById("txtHint").innerHTML = "test";
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            //if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            //}
+        };
+
+        xmlhttp.open("GET","index.php?controller=AJAXDatabase&action=getBudget"+str,true);//"+str,true);
+        xmlhttp.send();
+    }
+}
+</script>
+    
+    
     </head>
     
     <body>
