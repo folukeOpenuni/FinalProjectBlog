@@ -167,8 +167,8 @@ $CountryID = $filteredCountryID;
 $req->execute();
 
 //upload product image if it exists
-        if (!empty($_FILES[self::InputKey]['Title'])) {
-		blogpost::uploadFile($Title);
+        if (!empty($_FILES[self::InputKey]['BlogPostID'])) {
+		blogpost::uploadFile($BlogPostID);
 	}
 
     
@@ -561,6 +561,102 @@ Where Continent = 'South America'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+}
+   return $list;
+ }
+ 
+ public static function Andreas() {
+   $list = [];
+ $db = Db::getInstance();
+      
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+From blogpost
+inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
+inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
+Inner join writer on writer.WriterID= blogpost.WriterID
+Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID
+where writer.WriterID = 2");
+     foreach($req->fetchAll() as $blogpost) {
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+
+}
+   return $list;
+ }
+ public static function John() {
+      $db = Db::getInstance();
+      //use intval to make sure $id is an integer
+      if(isset($_POST['name'])){
+       
+        if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
+            $name=$_POST['name'];
+        }
+      }
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+From blogpost
+inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
+inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
+Inner join writer on writer.WriterID= blogpost.WriterID
+Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID
+where writer.WriterID = '$name'");
+     foreach($req->fetchAll() as $blogpost) {
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+
+}
+   return $list;
+ }
+ public static function Penny() {
+      $db = Db::getInstance();
+      //use intval to make sure $id is an integer
+      if(isset($_POST['name'])){
+       
+        if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
+            $name=$_POST['name'];
+        }
+      }
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+From blogpost
+inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
+inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
+Inner join writer on writer.WriterID= blogpost.WriterID
+Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID
+where writer.WriterID = 3");
+     foreach($req->fetchAll() as $blogpost) {
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+
+}
+   return $list;
+ }
+ public static function Kiera() {
+      $db = Db::getInstance();
+      //use intval to make sure $id is an integer
+      if(isset($_POST['name'])){
+       
+        if(preg_match("/[A-Z | a-z]+/", $_POST['name'])){
+            $name=$_POST['name'];
+        }
+      }
+      $req = $db->query("Select blogpost.BlogPostID, blogpost.Title,  blogpost.DatePublished, blogpost.WriterID, blogpost.ContentP1, blogpost.ContentP2, blogpost.Image, blogpost.Image1, blogpost.Image2,blogpost.Image3,keyword.Keyword, country.Country, continent.Continent, personaldata.FirstName, personaldata.LastName
+From blogpost
+inner join blogpostkeyword on blogpostkeyword.BlogPostID = blogpost.BlogPostID
+inner join keyword on blogpostkeyword.KeywordID = keyword.KeywordID
+Inner join writer on writer.WriterID= blogpost.WriterID
+Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
+Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
+Inner Join country ON blogpostcountry.CountryID = country.CountryID
+Inner Join continent on country.ContinentID = continent.ContinentID
+where writer.WriterID = 4");
+     foreach($req->fetchAll() as $blogpost) {
+ $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['Content'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
+
 }
    return $list;
  }
