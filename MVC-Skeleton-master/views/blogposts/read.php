@@ -42,7 +42,6 @@
 <?php 
 //$file = 'views/images/' . $blogpost->Image1;
 //if(file_exists($file)){ ?>
-    
 <!--IMAGE CAROUSEL-->
 <div id="blogpostimages" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -76,7 +75,6 @@ else
 {
 echo "<img src='views/images/standard/noimage.jpg' width='auto' />";
 }
-
 ?>-->
 </div>
 </center>	
