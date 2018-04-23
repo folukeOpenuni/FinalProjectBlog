@@ -184,13 +184,13 @@ function getBudgetJS(str) {
             <h5>Featured posts</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#" style="color:white">How to prepare for 6 months traveling</a>
+                        <a href="?controller=blogpost&action=read&BlogPostID=20" style="color:white">Making Do in Peru</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white">8 reasons to visit South East Asia in 2018</a>
+                        <a href="?controller=blogpost&action=read&BlogPostID=17" style="color:white">Smooth Talking in Amman, Jordan</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white">How to budget Down Under</a>
+                        <a href="?controller=blogpost&action=read&BlogPostID=18" style="color:white">Calgary’s epic foodie scene</a>
                     </li>
                 </ul>
         </div>

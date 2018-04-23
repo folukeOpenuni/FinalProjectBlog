@@ -108,11 +108,7 @@
         <p class="title">Writer</p>
         <p><?php echo $writer->bio;?></p>
         <p><a href="mailto:<?php echo $writer->Email;?>"><?php echo $writer->Email;?></a></p>
-        <!--Writer Search-->
-        <form class="form-inline my-2 my-lg-0" action="?controller=blogpost&action=<?php echo $writer->FirstName;?>" method="post" name="<?php echo $writer->FirstName;?>" >
-      <!--<input class="form-control mr-sm-2" type="search" placeholder="Search blog posts"aria-label="Search" name="name">-->
-      <!--<button class="btn btn-outline-info my-2 my-sm-0" type="submit" value = "search">Search</button>-->
-        <p><button class="button" type="submit" value = "search">See My Posts</button></p>
+        
       </div>
     </div>
   </div>
