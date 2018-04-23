@@ -27,7 +27,7 @@
     $controllers = array('pages' => ['home', 'about', 'error'],
 
                     'blogpost' => ['readAll','read','create','find','update','delete', 'africa', 'asia', 'antarctica', 'australia','europe','northamerica','southamerica'],
-                    'user' => ['create', 'authenticate'],
+                    'user' => ['create', 'authenticate', 'getwriterdetails'],
                     'ajax' =>['getBudget'],
                     'controllerXXX' => ['actionYYY', 'actionZZZ'],
                     );
