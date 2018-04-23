@@ -5,17 +5,18 @@
     <p>
         <div class="form-group col-md-12">
             <label>Title</label><br>
-        <input class="w3-input" type="text" name="Title" required>
+            <textarea name="comment" rows="1" cols="80" type="text" name="Title" ></textarea>
+
         </div>
     </p>
     <p> 
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-3">
             <label>Date Published</label><br>
             <input class="w3-input" type="datetime-local" name="DatePublished" Placeholder= "YYYY-MM-DD" required>
         </div>
     </p>
     <p>
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-3">
   <label for="WriterID">Writer</label>
   <select class="form-control" id="WriterID" name="WriterID" required>
     <option value="1">John Murray</option>
@@ -27,18 +28,19 @@
  
     </p>
     <p>
-        <div class="form-group col-lg-12">
+        <div class="form-group col-md-12">
             <label>Paragraph 1</label><br>
-        <input class="w3-input" type="text" name="ContentP1" rows='5' required>
+            <textarea name="comment" rows="10" cols="80" type="text" name="ContentP1" ></textarea>
+        <!--<input class="text" rows='5' required>-->
         </div>
     </p>
     <p>
-        <div class="form-group col-lg-12">
+        <div class="form-group col-md-12">
             <label>Paragraph 2</label><br>
-        <input class="w3-input" type="text" name="ContentP2" rows='5' required>
+            <textarea name="comment" rows="10" cols="80" type="text" name="ContentP2" ></textarea>
         </div>
     </p>
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-3">
   <label for="KeywordID">Keyword</label>
   <select class="form-control" id="KeywordID" name="KeywordID" required>
     <option value="1">Beech</option>
@@ -50,7 +52,7 @@
        <option value="7">Relaxation</option>
   </select>
         </div>
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-3">
   <label for="CountryID">Country</label>
     <select class="form-control" id="CountryID" name='CountryID' required>
     <option value="1">Afghanistan</option>
