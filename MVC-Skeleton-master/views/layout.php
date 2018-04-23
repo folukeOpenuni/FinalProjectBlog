@@ -69,7 +69,7 @@ function getBudgetJS(str) {
         </li>
         <li class="nav-item">
 
-          <a class="nav-link" href='?controller=pages&action=about'>About</a>
+          <a class="nav-link" href='?controller=user&action=getwriterdetails'>About</a>
 
         </li>
         <li class="nav-item dropdown">
