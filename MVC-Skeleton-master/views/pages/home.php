@@ -1,3 +1,5 @@
+<?php header("Content-Type: text/html; charset=ISO-8859-1");?>
+
 <!--HEADER CAROUSEL-->
 <div id="headercarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -50,19 +52,19 @@
             <h2 class="text-center">April's top 3 destinations</h2>
             <div class="row">
                 <div class="col-md-4 col-sm-10 col-10 container">
-                <a href='?controller=blogpost&action=read&BlogPostID=3'><img class="image" src="views/images/norway.jpg" class="img-thumbnail img-responsive" width="100%">
+                <a href='?controller=blogpost&action=read&BlogPostID=3'><img class="image" src="views/images/blogposts/norway.jpg" class="img-thumbnail img-responsive" width="100%">
                 <div class="middle">
                 <div class="text">10 Instagrammable places in Norway</div>
                 </div></a>
                 </div>
                 <div class="col-md-4 col-sm-10 col-10 container">
-                <a href='?controller=blogpost&action=read&BlogPostID=5'><img class="image" src="views/images/sanfransico.jpg" class="img-thumbnail img-responsive" width="100%">
+                <a href='?controller=blogpost&action=read&BlogPostID=5'><img class="image" src="views/images/blogposts/sanfransico.jpg" class="img-thumbnail img-responsive" width="100%">
                 <div class="middle">
                 <div class="text">Top 10 cheap eats in Sanfran</div>
                 </div></a>
                 </div>
                 <div class="col-md-4 col-sm-10 col-10 container">
-                <a href='?controller=blogpost&action=read&BlogPostID=6'><img class="image" src="views/images/greece.jpg" class="img-thumbnail img-responsive" width="100%">
+                <a href='?controller=blogpost&action=read&BlogPostID=6'><img class="image" src="views/images/blogposts/greece.jpg" class="img-thumbnail img-responsive" width="100%">
                 <div class="middle">
                 <div class="text">My secret guide to the best beaches in Greece</div>
                 </div></a>
