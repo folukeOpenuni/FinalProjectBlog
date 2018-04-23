@@ -41,7 +41,7 @@
     <div class="form-group col-md-12">
   <label for="KeywordID">Keyword</label>
   <select class="form-control" id="KeywordID" name="KeywordID" required>
-    <option value="1">Beech</option>
+    <option value="1">Beach</option>
     <option value="2">Cuisine</option>
     <option value="3">Lesser Known</option>
     <option value="4">Scandanavia</option>

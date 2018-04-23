@@ -64,7 +64,7 @@
                 </div></a>
                 </div>
                 <div class="col-md-4 col-sm-10 col-10 container">
-                <a href='?controller=blogpost&action=read&BlogPostID=18'><img class="image" src="views/images/blogposts/18.jpeg" class="img-thumbnail img-responsive" width="100%">
+                <a href='?controller=blogpost&action=read&BlogPostID='><img class="image" src="views/images/blogposts/18.jpeg" class="img-thumbnail img-responsive" width="100%">
                 <div class="middle">
                 <div class="text">Calgary’s epic foodie scene</div>
                 </div></a>
