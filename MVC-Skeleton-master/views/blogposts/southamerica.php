@@ -17,7 +17,7 @@ We're meant to be together
 <!--BLOG POST LISTINGS-->
         <div class="col-md-4 container">
             <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'>
-            <img class="image" src="views/images/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive rounded" width="100%">
+            <img class="image" src="views/images/blogposts/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive rounded" width="100%">
        <div class="middle">
         <div class="text"><?php echo $blogpost->Title;?></div>
         </div></a>

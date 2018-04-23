@@ -436,7 +436,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'Africa'");
+Where continent.Continent = 'Africa'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
@@ -462,7 +462,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'Asia'");
+Where continent.Continent = 'Asia'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
@@ -481,7 +481,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'Antarctica'");
+Where continent.Continent = 'Antarctica'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
@@ -500,7 +500,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'Australia'");
+Where continent.Continent = 'Australia'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
@@ -519,7 +519,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'Europe'");
+Where continent.Continent = 'Europe'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
@@ -538,7 +538,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'North America'");
+Where continent.Continent = 'North America'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);
@@ -557,7 +557,7 @@ Inner join personaldata on writer.PersonalDataID = personaldata.PersonalDataID
 Inner join blogpostcountry on blogpostcountry.BlogPostID = blogpost.BlogPostID
 Inner Join country ON blogpostcountry.CountryID = country.CountryID
 Inner Join continent on country.ContinentID = continent.ContinentID
-Where Continent = 'South America'");
+Where continent.Continent = 'South America'");
 // we create a list of Product objects from the database results
 foreach($req->fetchAll() as $blogpost) {
  $list[] = new blogpost($blogpost['BlogPostID'],$blogpost['Title'],$blogpost['DatePublished'],$blogpost['WriterID'],$blogpost['ContentP1'],$blogpost['ContentP2'], $blogpost['Image'],$blogpost['Image1'],$blogpost['Image2'],$blogpost['Image3'],$blogpost['Keyword'],$blogpost['Country'],$blogpost['Continent'], $blogpost['FirstName'],$blogpost['LastName']);

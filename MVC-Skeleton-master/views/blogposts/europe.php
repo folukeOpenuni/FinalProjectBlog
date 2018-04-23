@@ -13,7 +13,7 @@
 <?php foreach($blogposts as $blogpost) { ?>
 <!--BLOG POST LISTINGS-->
         <div class="col-md-4 col-sm-10 col-10 container">
-        <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'><img class="image" src="views/images/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive" width="100%">
+        <a href='?controller=blogpost&action=read&BlogPostID=<?php echo $blogpost->BlogPostID; ?>'><img class="image" src="views/images/blogposts/<?php echo $blogpost->Image;?>" class="img-thumbnail img-responsive" width="100%">
         <div class="middle">
         <div class="text"><?php echo $blogpost->Title;?></div>
         </div></a>
