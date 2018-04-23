@@ -119,6 +119,7 @@ class blogpostController {
         $blogposts = blogpost::find();
 
       require_once('views/pages/SearchResults.php');
+      
       }
         public function andreas() {
           //$name = $_GET['name'];
