@@ -11,6 +11,8 @@
 <div class="text-white text-overlay blog-img">
   <img class="img-fulid blog-img" src="views/images/blogposts/<?php echo $blogpost->Image; ?>">
     <h1 class="text-centered"><?php echo $blogpost->Title; ?></h1>
+    <br>
+    <br>
     <p class="text-subhead">Date Published: <?php echo $blogpost->DatePublished; ?></p>
 </div>
 <br>
