@@ -4,9 +4,7 @@
 
             <img class="img-fluid" src="views/images/continent/southamerica.jpg"  alt="southamerica">
             <h1 class="text-centered">South America</h1>
-            <p class="text-subhead">Whenever, wherever<br>
-We're meant to be together
-</p>
+            <p class="text-subhead">Whenever, wherever. We're meant to be together</p>
         </div>
 </section>
 
